@@ -1,0 +1,31 @@
+﻿@page "/pizzas"
+@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavManager
+
+<h1>Buy a Pizza</h1>
+
+<p>I want to order a: @PizzaName</p>
+
+<p>I want to add this topping: @ToppingName</p>
+
+<a href=@HomePageURI>Home Page</a>
+
+@code {
+	[Parameter]
+	public string PizzaName { get; set; }
+
+	public string HomePageURI { get; set; }
+
+	private string ToppingName { get; set; }
+
+	protected override void OnInitialized()
+	{
+		HomePageURI = NavManager.BaseUri;
+
+		var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+		if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("extratopping", out var extraTopping))
+		{
+			ToppingName = System.Convert.ToString(extraTopping);
+		}
+	}
+}

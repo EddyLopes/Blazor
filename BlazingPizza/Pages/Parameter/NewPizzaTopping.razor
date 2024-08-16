@@ -1,0 +1,10 @@
+﻿@using BlazingPizza.Model
+
+<h2>New Topping: @Topping.Name</h2>
+
+<p>Ingredients: @Topping.Ingredients</p>
+
+@code {
+    [Parameter]
+    public PizzaTopping_ Topping { get; set; }
+}
