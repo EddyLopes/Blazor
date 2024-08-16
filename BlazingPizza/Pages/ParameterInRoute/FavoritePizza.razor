@@ -1,0 +1,22 @@
+﻿@page "/FavoritePizzas/{FavoriteSize:int?}"
+
+<h1>Choose a Pizza</h1>
+
+<p>Your favorite pizza is: @FavoriteSize</p>
+
+@code {
+	[Parameter]
+	public int? FavoriteSize { get; set; }
+
+	protected override void OnInitialized()
+	{
+		FavoriteSize ??= 20;
+	}
+
+	/*
+		O método OnInitialized é executado quando os usuários solicitam a página pela primeira vez. 
+		Ele não é executado se eles solicitam a mesma página com um parâmetro de roteamento diferente. 
+		Por exemplo, se você espera que os usuários naveguem de http://www.contoso.com/favoritepizza/hawaiian 
+		para http://www.contoso.com/favoritepizza, defina o valor padrão no método OnParametersSet().
+	*/
+}
