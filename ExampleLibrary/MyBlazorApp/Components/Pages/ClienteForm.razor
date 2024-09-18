@@ -1,0 +1,38 @@
+﻿<EditForm Model="@Cliente" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <InputText id="nome" class="form-control" @bind-Value="Cliente.Nome" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <InputText id="email" class="form-control" @bind-Value="Cliente.Email" />
+    </div>
+
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <InputText id="telefone" class="form-control" @bind-Value="Cliente.Telefone" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="button" class="btn btn-secondary" @onclick="Cancel">Cancelar</button>
+</EditForm>
+
+@code {
+    [Parameter] public Cliente Cliente { get; set; } = new Cliente();  // Usando o objeto Cliente diretamente
+    [Parameter] public EventCallback<Cliente> OnValidSubmit { get; set; }
+    [Parameter] public EventCallback OnCancel { get; set; }
+
+    private async Task HandleValidSubmit()
+    {
+        await OnValidSubmit.InvokeAsync(Cliente);  // Chamada assíncrona para enviar o cliente
+    }
+
+    private async Task Cancel()
+    {
+        await OnCancel.InvokeAsync();  // Chamada assíncrona para o cancelamento
+    }
+}

@@ -1,0 +1,23 @@
+﻿@page "/test-click"
+@rendermode InteractiveServer
+
+<h3>Testar Clique</h3>
+<button @onclick="TestClick">Clique aqui</button>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p>@message</p>
+}
+
+@code {
+    private string message = string.Empty;
+
+    private void TestClick()
+    {
+        // Atualiza a mensagem para ser exibida na tela
+        message = "Botão clicado!";
+
+        // Força a re-renderização da interface
+        StateHasChanged();
+    }
+}

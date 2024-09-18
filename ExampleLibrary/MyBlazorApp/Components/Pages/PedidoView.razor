@@ -1,0 +1,108 @@
+﻿@page "/pedido-form"
+@rendermode InteractiveServer
+
+<h3>Criar Pedido</h3>
+
+<div>
+    <label>Data do Pedido:</label>
+    <input type="date" @bind="@pedido.Data" class="form-control" />
+</div>
+
+<div>
+    <label>Cliente:</label>
+    <input type="text" @bind="@pedido.ClienteNome" class="form-control" readonly />
+    <button class="btn btn-secondary" @onclick="OpenClienteSearch">Pesquisar Cliente</button>
+</div>
+
+<button class="btn btn-primary" @onclick="SalvarPedido">Salvar Pedido</button>
+
+@* Modal de Pesquisa de Clientes *@
+@if (showClienteSearch)
+{
+    <div class="modal fade show" tabindex="-1" style="display: block;" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pesquisar Cliente</h5>
+                    <button type="button" class="close" @onclick="CloseClienteSearch">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" @bind="clienteSearchTerm" placeholder="Digite o nome do cliente" class="form-control" />
+                    <ul>
+                        @foreach (var cliente in FilteredClientes)
+                        {
+                            <li @onclick="() => SelecionarCliente(cliente)" style="cursor: pointer;">
+                                @cliente.Nome
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @onclick="CloseClienteSearch">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+}
+
+
+@code {
+
+    private Pedido pedido = new Pedido { Data = DateTime.Now };
+    private List<Cliente> clientes = new List<Cliente>();
+    private bool showClienteSearch = false;
+    private string clienteSearchTerm = string.Empty;
+    
+    // Exemplo de dados iniciais (em um cenário real, você buscaria isso de uma API ou banco de dados)
+    protected override void OnInitialized()
+    {
+        clientes = new List<Cliente>
+        {
+            new Cliente { ClienteId = 1, Nome = "João da Silva" },
+            new Cliente { ClienteId = 2, Nome = "Maria Oliveira" },
+            new Cliente { ClienteId = 3, Nome = "Carlos Souza" },
+            // Adicione mais clientes conforme necessário
+        };
+    }
+
+    private IEnumerable<Cliente> FilteredClientes =>
+        string.IsNullOrEmpty(clienteSearchTerm) ? clientes : clientes.Where(c => c.Nome.Contains(clienteSearchTerm, StringComparison.OrdinalIgnoreCase));
+
+    private void OpenClienteSearch()
+    {
+        showClienteSearch = true;
+    }
+
+    private void CloseClienteSearch()
+    {
+        showClienteSearch = false;
+    }
+
+    private void SelecionarCliente(Cliente cliente)
+    {
+        pedido.ClienteId = cliente.ClienteId;
+        pedido.ClienteNome = cliente.Nome;
+        showClienteSearch = false;
+    }
+
+    private void SalvarPedido()
+    {
+        // Aqui você pode implementar a lógica para salvar o pedido no banco de dados
+        Console.WriteLine($"Pedido salvo: Cliente {pedido.ClienteNome} em {pedido.Data}");
+    }
+
+    private class Cliente
+    {
+        public int ClienteId { get; set; }
+        public string Nome { get; set; }
+    }
+
+    private class Pedido
+    {
+        public int PedidoId { get; set; }
+        public DateTime Data { get; set; }
+        public int ClienteId { get; set; }  // FK para o cliente
+        public string ClienteNome { get; set; } // Apenas para exibição
+    }
+}
