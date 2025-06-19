@@ -1,0 +1,67 @@
+﻿@page "/SystemCodes"
+@attribute [StreamRendering]
+@attribute [Authorize]
+
+<PageTitle>System Codes List</PageTitle>
+
+<h1>System Codes List</h1>
+
+@if (SystemCodesList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p><a href="/AddSystemCode" class="btn btn-primary float-end">Add New System Code</a></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Order No</th>
+                <th>Create By</th>
+                <th>Create On</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var systemCode in SystemCodesList)
+            {
+                <tr>
+                    <td>@systemCode.Code</td>
+                    <td>@systemCode.Description</td>
+                    <td>@systemCode.OrderNo</td>
+                    <td>@systemCode.CreatedBy.FullName</td>
+                    <td>@systemCode.CreatedOn</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public string UserId { get; set; }
+
+    public List<SystemCode>? SystemCodesList { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    [Inject]
+    public UserManager<ApplicationUser> userManager { get; set; }
+
+    [Inject]
+    public ISystemCodeServices SystemCodeServices { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationState).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentUser = await userManager.GetUserAsync(user);
+            UserId = currentUser.Id;
+        }
+
+        SystemCodesList = await SystemCodeServices.GetSystemCodesAsync();
+    }
+}
+
