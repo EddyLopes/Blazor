@@ -184,6 +184,14 @@
               "target": "Package",
               "version": "[9.0.6, )"
             },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[8.8.0, )"
+            },
+            "MudBlazor.ThemeManager": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"

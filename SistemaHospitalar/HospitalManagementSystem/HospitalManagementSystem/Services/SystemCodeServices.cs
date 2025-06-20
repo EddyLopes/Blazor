@@ -67,15 +67,5 @@ public class SystemCodeServices : ISystemCodeServices
                                         .Include(x => x.ModifiedBy)
                                         .ToListAsync();
         return systemCodes;
-    }
-
-    public async Task<List<SystemCodeDetail>> GetSystemCodeDetailsAsync(int systemCodeId)
-    {
-        return await _context.SystemCodeDetails
-                             .Include(x => x.SystemCode)
-                             .Include(x => x.CreatedBy)
-                             .Include(x => x.ModifiedBy)
-                             .Where(x => x.SystemCodeId == systemCodeId)
-                             .ToListAsync();
-    }   
+    }  
 }

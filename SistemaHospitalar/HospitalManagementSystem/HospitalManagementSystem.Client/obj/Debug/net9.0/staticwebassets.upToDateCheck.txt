@@ -1,0 +1,4 @@
+wwwroot\appsettings.Development.json
+wwwroot\appsettings.json
+C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem.Client\wwwroot\appsettings.Development.json
+C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem.Client\wwwroot\appsettings.json

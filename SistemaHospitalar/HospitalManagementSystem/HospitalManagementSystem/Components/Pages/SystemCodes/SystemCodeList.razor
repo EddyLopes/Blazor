@@ -12,30 +12,38 @@
 }
 else
 {
-    <p><a href="/AddSystemCode" class="btn btn-primary float-end">Add New System Code</a></p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Code</th>
-                <th>Description</th>
-                <th>Order No</th>
-                <th>Create By</th>
-                <th>Create On</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var systemCode in SystemCodesList)
-            {
-                <tr>
-                    <td>@systemCode.Code</td>
-                    <td>@systemCode.Description</td>
-                    <td>@systemCode.OrderNo</td>
-                    <td>@systemCode.CreatedBy.FullName</td>
-                    <td>@systemCode.CreatedOn</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <MudCard Elevation="28">
+        <MudCardHeader>
+            <MudCardContent>
+                <MudText Typo="Typo.h6">Add / Edit System Codes</MudText>
+                <div class="d-flex justify-content-end">
+                    <MudButton Href="/AddSystemCode" Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add">
+                        Add System Code
+                    </MudButton>
+                </div>
+            </MudCardContent>
+        </MudCardHeader>
+        <MudCardContent>
+            @* <p><a href="/AddSystemCode" class="btn btn-primary float-end">Add New System Code</a></p> *@
+            <MudDataGrid Items="@SystemCodesList" Filterable="false" SortMode="@SortMode.None" Groupable="false">
+                <Columns>
+                    <PropertyColumn Property="x => x.Code" />
+                    <PropertyColumn Property="x => x.Description" />
+                    <PropertyColumn Property="x => x.OrderNo" Title="Order No" />
+                    <PropertyColumn Property="x => x.CreatedBy.FullName" Title="Created By" />
+                    <PropertyColumn Property="x => x.CreatedOn" Title="Created On" />
+                    <TemplateColumn CellClass="d-flex justify-end">
+                        <CellTemplate>
+                            <MudStack Row>
+                                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Primary">Edit</MudButton>
+                                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Delete" Color="Color.Error">Delete</MudButton>
+                            </MudStack>
+                        </CellTemplate>
+                    </TemplateColumn>
+                </Columns>
+            </MudDataGrid>
+        </MudCardContent>
+    </MudCard>
 }
 
 @code {
@@ -50,7 +58,7 @@ else
     public UserManager<ApplicationUser> userManager { get; set; }
 
     [Inject]
-    public ISystemCodeServices SystemCodeServices { get; set; }
+    public ISystemCodeServices SystemCodeServices { get; set; } = null!;
 
     protected override async Task OnInitializedAsync()
     {
@@ -64,4 +72,8 @@ else
         SystemCodesList = await SystemCodeServices.GetSystemCodesAsync();
     }
 }
+
+
+
+
 

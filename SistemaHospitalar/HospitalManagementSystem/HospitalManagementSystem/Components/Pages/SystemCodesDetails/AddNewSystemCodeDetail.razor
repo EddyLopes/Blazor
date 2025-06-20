@@ -1,0 +1,84 @@
+﻿@page "/AddSystemCodeDetail"
+@attribute [Authorize]
+
+<PageTitle>New System Code Detail</PageTitle>
+
+<div class="row">
+    <EditForm Model="systemCodeDetail" OnValidSubmit="CreateNewSystemCodeDetail" FormName="AddSystemCodeDetail">
+        <DataAnnotationsValidator />
+        <ValidationSummary class="text-danger" role="alert" />
+        <div class="col-md-12">
+            <h3>Add New System Code</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="systemCode.Code">Code</label>
+                    <InputText for="Code" class="form-control" @bind-Value="systemCodeDetail.Code" />
+                    <ValidationMessage For="() => systemCodeDetail.Code" class="text-danger" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="systemCode.Description">Name</label>
+                    <InputText for="Description" class="form-control" @bind-Value="systemCodeDetail.Description" />
+                    <ValidationMessage For="() => systemCodeDetail.Description" class="text-danger" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="systemCode.OrderNo">Order No</label>
+                    <InputNumber for="OrderNo" class="form-control" @bind-Value="systemCodeDetail.OrderNo" />
+                    <ValidationMessage For="() => systemCodeDetail.OrderNo" class="text-danger" />
+                </div>
+
+            </div>
+            <div class="form-group mt-4">
+                <button type="button" class="btn btn-warning float-start" @onclick="BackToList">Back to List</button>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Save">
+                    Save System Code
+                </MudButton>
+
+            </div>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    public SystemCodeDetail systemCodeDetail { get; set; } = new();
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    [Inject]
+    public UserManager<ApplicationUser> userManager { get; set; }
+
+    [Inject]
+    public ISystemCodeDetailServices SystemCodeDetailServices { get; set; } = null!;
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationState).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentUser = await userManager.GetUserAsync(user);
+            UserId = currentUser.Id;
+        }
+    }
+
+    private async Task CreateNewSystemCodeDetail()
+    {
+        systemCodeDetail.CreatedOn = DateTime.UtcNow;
+        systemCodeDetail.CreatedById = UserId;
+        var result = await SystemCodeDetailServices.AddSystemCodeDetailAsync(systemCodeDetail);
+        BackToList();
+    }
+
+    private void BackToList()
+    {
+        NavigationManager.NavigateTo("/SystemCodeDetails");
+    }
+}
+
