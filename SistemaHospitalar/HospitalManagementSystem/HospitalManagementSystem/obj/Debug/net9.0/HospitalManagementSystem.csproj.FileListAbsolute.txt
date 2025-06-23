@@ -232,7 +232,6 @@ C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSy
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\bin\Debug\net9.0\runtimes\win-x64\native\krb5_64.dll
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\bin\Debug\net9.0\runtimes\win-x64\native\krbcc64.dll
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
-C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\bin\Debug\net9.0\Microsoft.Extensions.Localization.dll
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\bin\Debug\net9.0\Microsoft.Extensions.Localization.Abstractions.dll
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\bin\Debug\net9.0\MudBlazor.dll
@@ -240,3 +239,4 @@ C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSy
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\obj\Debug\net9.0\compressed\tzxjg6is5z-au1zu6ifz9.gz
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\obj\Debug\net9.0\compressed\0wz98yz2xy-b8x8f7e52z.gz
 C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\obj\Debug\net9.0\compressed\dzrvjopq7v-9850lpnkly.gz
+C:\GitHub\Blazor\SistemaHospitalar\HospitalManagementSystem\HospitalManagementSystem\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

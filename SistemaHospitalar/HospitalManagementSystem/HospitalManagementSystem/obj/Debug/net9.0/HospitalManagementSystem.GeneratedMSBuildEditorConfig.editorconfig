@@ -179,6 +179,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Pages/Countries/AddNewCountry.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudHJpZXNcQWRkTmV3Q291bnRyeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Pages/Countries/CountriesList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudHJpZXNcQ291bnRyaWVzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Pages/Departaments/AddNewDepartament.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZXBhcnRhbWVudHNcQWRkTmV3RGVwYXJ0YW1lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Pages/Departaments/DepartamentsList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZXBhcnRhbWVudHNcRGVwYXJ0YW1lbnRzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -201,10 +217,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Pages/SystemCodes/SystemCodeList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTeXN0ZW1Db2Rlc1xTeXN0ZW1Db2RlTGlzdC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/GitHub/Blazor/SistemaHospitalar/HospitalManagementSystem/HospitalManagementSystem/Components/Routes.razor]

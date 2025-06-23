@@ -13,17 +13,33 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label for="systemCode.Code">Code</label>
+                    <label for="systemCodeDetail.Code">Code</label>
                     <InputText for="Code" class="form-control" @bind-Value="systemCodeDetail.Code" />
                     <ValidationMessage For="() => systemCodeDetail.Code" class="text-danger" />
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="systemCode.Description">Name</label>
+                    <label for="systemCodeDetail.Description">Name</label>
                     <InputText for="Description" class="form-control" @bind-Value="systemCodeDetail.Description" />
                     <ValidationMessage For="() => systemCodeDetail.Description" class="text-danger" />
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="systemCode.OrderNo">Order No</label>
+                    <label for="SystemCodeId">System Codes</label>
+                    <InputSelect for="SystemCodeId" class="form-control" @bind-Value="systemCodeDetail.SystemCodeId">
+                        <option value="">Select System Codes</option>
+                        @if(SystemCodesList.Any())
+                        {
+                            @foreach (var systemCode in SystemCodesList)
+                            {
+                                <option value="@systemCode.Id">@systemCode.Description</option>
+                            }
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="() => systemCodeDetail.SystemCodeId" class="text-danger" />
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label for="systemCodeDetail.OrderNo">Order No</label>
                     <InputNumber for="OrderNo" class="form-control" @bind-Value="systemCodeDetail.OrderNo" />
                     <ValidationMessage For="() => systemCodeDetail.OrderNo" class="text-danger" />
                 </div>
@@ -41,10 +57,11 @@
 </div>
 
 @code {
+    public string UserId { get; set; }
+    public List<SystemCode> SystemCodesList { get; set; } = [];
+
     [SupplyParameterFromForm]
     public SystemCodeDetail systemCodeDetail { get; set; } = new();
-
-    public string UserId { get; set; }
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
@@ -54,6 +71,9 @@
 
     [Inject]
     public ISystemCodeDetailServices SystemCodeDetailServices { get; set; } = null!;
+
+    [Inject]
+    public ISystemCodeServices SystemCodeServices { get; set; } = null!;
 
     [Inject]
     public NavigationManager NavigationManager { get; set; }
@@ -66,6 +86,8 @@
             var currentUser = await userManager.GetUserAsync(user);
             UserId = currentUser.Id;
         }
+
+        SystemCodesList = await SystemCodeServices.GetSystemCodesAsync();
     }
 
     private async Task CreateNewSystemCodeDetail()
@@ -78,7 +100,7 @@
 
     private void BackToList()
     {
-        NavigationManager.NavigateTo("/SystemCodeDetails");
+        NavigationManager.NavigateTo("/SystemCodesDetails");
     }
 }
 

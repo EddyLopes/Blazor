@@ -1,0 +1,99 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\layout\\default\\defaultlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\layout\\default\\defaultlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 340,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ca8cc5c7-0231-406a-95cd-aa5ed6ac0190}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DefaultLayout.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T11:48:12.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T11:50:00.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T11:51:31.34Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

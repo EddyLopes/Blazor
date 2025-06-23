@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\GitHub\\Blazor\\ExampleLibrary\\FirstClassLibrary\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FirstClassLibrary.bundle.scp.css",
-      "PackagePath": "staticwebassets\\FirstClassLibrary.bundle.scp.css"
+      "PackagePath": "staticwebassets\\FirstClassLibrary.onsu71ttbt.bundle.scp.css"
     },
     {
       "Id": "C:\\GitHub\\Blazor\\ExampleLibrary\\FirstClassLibrary\\wwwroot\\background.png",
@@ -11,6 +11,10 @@
     {
       "Id": "C:\\GitHub\\Blazor\\ExampleLibrary\\FirstClassLibrary\\wwwroot\\exampleJsInterop.js",
       "PackagePath": "staticwebassets\\exampleJsInterop.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FirstClassLibrary.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FirstClassLibrary.Microsoft.AspNetCore.StaticWebAssets.props",

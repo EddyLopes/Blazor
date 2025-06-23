@@ -27,11 +27,6 @@ C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\MyBlazorApp.MvcAppl
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\MyBlazorApp.sourcelink.json
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.build.json
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.development.json
-C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets\msbuild.MyBlazorApp.Microsoft.AspNetCore.StaticWebAssets.props
-C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets\msbuild.build.MyBlazorApp.props
-C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MyBlazorApp.props
-C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MyBlazorApp.props
-C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.pack.json
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\scopedcss\bundle\MyBlazorApp.styles.css
@@ -42,3 +37,12 @@ C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\refint\MyBlazorApp.
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\MyBlazorApp.pdb
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\MyBlazorApp.genruntimeconfig.cache
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\ref\MyBlazorApp.dll
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\bin\Debug\net8.0\FirstClassLibrary.staticwebassets.endpoints.json
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\bin\Debug\net8.0\MyBlazorApp.staticwebassets.endpoints.json
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

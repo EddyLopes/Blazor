@@ -8,6 +8,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 {
     public DbSet<SystemCodeDetail> SystemCodeDetails { get; set; }
     public DbSet<SystemCode> SystemCodes { get; set; }
+    public DbSet<Country> Countries { get; set; }
+    public DbSet<Departament> Departaments { get; set; }
     //public DbSet<UserCreateActivity> UserCreateActivities { get; set; }
     //public DbSet<UserModifiedActivity> UserModifiedActivities { get; set; }
     //public DbSet<IdentityUserClaim<string>> UserClaims { get; set; }

@@ -1,0 +1,65 @@
+﻿@page "/component"
+@rendermode InteractiveServer
+
+<h3>Component</h3>
+
+<div class="row">
+    <div class="col-md-3">
+        <BootstrapCard Title="Teste título"
+                       Description="descrição do cartão"
+                       ButtonText="Processar"
+                       EventClick="EventClickCard1" />
+    </div>
+    <div class="col-md-3">
+        <BootstrapCard Title="Título cartão 2"
+                       Description="xpto card 2"
+                       ButtonText="Comprar"
+                       EventClick="EventClickCard2" />
+
+    </div>
+    <div class="col-md-3">
+        <BootstrapCard>
+            <h4>Eu sou o child content</h4>
+            <p>Olá mundo</p>
+            <button class="btn btn-primary" @onclick="EventClickCard1">Clique</button>
+        </BootstrapCard>
+    </div>
+    <div class="col-md-3">
+        <CascadingValue Name="CardHeaderButtonText" Value="@("Cadastrar")">
+            <BootstrapCard>
+                <CardHeader>
+                    Cabeçalho
+                </CardHeader>
+                <CardText>
+                    Conteúdo
+                </CardText>
+                <CardFooter>
+                    Rodapé
+                </CardFooter>
+            </BootstrapCard>
+        </CascadingValue>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <InputString class="form-control" PlaceHolder="Digite o seu texto" maxlength="5" autocomplete="off" />
+    </div>
+</div>
+
+
+@code {
+    [Inject]
+    public IJSRuntime Js { get; set; } = null!;
+
+    private void EventClickCard1()
+    {
+        Js.InvokeVoidAsync("alert", "Card 1");
+    }
+
+    private void EventClickCard2()
+    {
+        Js.InvokeVoidAsync("alert", "Card 2");
+    }
+
+}

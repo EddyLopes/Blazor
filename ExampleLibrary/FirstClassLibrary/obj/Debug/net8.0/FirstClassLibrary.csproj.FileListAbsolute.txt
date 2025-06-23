@@ -22,3 +22,12 @@ C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\FirstClassLib
 C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\refint\FirstClassLibrary.dll
 C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\FirstClassLibrary.pdb
 C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\ref\FirstClassLibrary.dll
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\bin\Debug\net8.0\FirstClassLibrary.staticwebassets.endpoints.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets\msbuild.FirstClassLibrary.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

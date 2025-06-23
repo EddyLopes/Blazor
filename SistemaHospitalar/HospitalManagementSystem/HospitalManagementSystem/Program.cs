@@ -42,6 +42,9 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 builder.Services.AddScoped<ISystemCodeServices, SystemCodeServices>();
 builder.Services.AddScoped<ISystemCodeDetailServices, SystemCodeDetailServices>();
+builder.Services.AddScoped<ICountryServices, CountryServices>();
+builder.Services.AddScoped<IDepartamentServices, DepartamentServices>();
+
 builder.Services.AddMudServices();
 
 var app = builder.Build();
