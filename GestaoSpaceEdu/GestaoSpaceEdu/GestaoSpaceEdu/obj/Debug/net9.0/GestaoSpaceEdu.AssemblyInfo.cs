@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestaoSpaceEdu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38224e3cb75211a0a45fe8bedad4e187bec77004")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a7e7e1b283906da27b9a110a5f644281adfba47")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestaoSpaceEdu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestaoSpaceEdu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

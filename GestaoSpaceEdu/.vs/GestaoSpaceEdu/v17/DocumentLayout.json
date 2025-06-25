@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\confirmemail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\confirmemail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\registerconfirmation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\registerconfirmation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\resendemailconfirmation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\resendemailconfirmation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\forgotpassword.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\forgotpassword.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\layout\\default\\defaultlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\layout\\default\\defaultlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 340,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,41 +74,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\App.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\App.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\App.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\App.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBEAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T21:51:16.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "DefaultLayout.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
               "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
               "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Layout\\Default\\DefaultLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwDMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-23T11:48:12.102Z",
+              "WhenOpened": "2025-06-23T22:14:16.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Routes.razor",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
-              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
-              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
-              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Routes.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-23T11:50:00.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
               "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Login.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvyUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-23T11:51:31.34Z",
+              "WhenOpened": "2025-06-23T22:08:53.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ForgotPassword.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ForgotPassword.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ForgotPassword.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ForgotPassword.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ForgotPassword.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T23:00:22.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Register.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Register.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Register.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\Register.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-23T22:19:16.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ResendEmailConfirmation.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ResendEmailConfirmation.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ResendEmailConfirmation.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ResendEmailConfirmation.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ResendEmailConfirmation.razor",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T09:28:46.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterConfirmation.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\RegisterConfirmation.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\RegisterConfirmation.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\RegisterConfirmation.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\RegisterConfirmation.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T10:30:26.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConfirmEmail.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ConfirmEmail.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ConfirmEmail.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ConfirmEmail.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Account\\Pages\\ConfirmEmail.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-25T11:09:08.239Z",
               "EditorCaption": ""
             }
           ]

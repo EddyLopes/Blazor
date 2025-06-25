@@ -13,56 +13,66 @@
 
 <PageTitle>Log in</PageTitle>
 
-<h1>Log in</h1>
-<div class="row">
-    <div class="col-lg-6">
-        <section>
-            <StatusMessage Message="@errorMessage" />
-            <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
-                <DataAnnotationsValidator />
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <ValidationSummary class="text-danger" role="alert" />
-                <div class="form-floating mb-3">
-                    <InputText @bind-Value="Input.Email" id="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label for="Input.Email" class="form-label">Email</label>
-                    <ValidationMessage For="() => Input.Email" class="text-danger" />
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText type="password" @bind-Value="Input.Password" id="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label for="Input.Password" class="form-label">Password</label>
-                    <ValidationMessage For="() => Input.Password" class="text-danger" />
-                </div>
-                <div class="checkbox mb-3">
-                    <label class="form-label">
-                        <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" />
-                        Remember me
-                    </label>
-                </div>
-                <div>
-                    <button type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
-                        <a href="Account/ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </EditForm>
-        </section>
+<div class="p-lg-5 p-4">
+    <div>
+        <h5 class="text-primary">Bem-vindo!</h5>
+        <p class="text-muted">Acesse o sistema.</p>
     </div>
-    <div class="col-lg-4 col-lg-offset-2">
-        <section>
-            <h3>Use another service to log in.</h3>
-            <hr />
+
+    <div class="mt-4">
+        <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
+            <DataAnnotationsValidator />
+            <ValidationSummary class="invalid-feedback" role="alert" />
+
+            <div class="mb-3">
+                <label for="Input.Email" class="form-label">E-mail</label>
+                <InputText @bind-Value="Input.Email" id="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="Digite seu e-mail" />
+                <ValidationMessage For="() => Input.Email" class="invalid-feedback" />
+            </div>
+            <div class="mb-3">
+                <div class="float-end">
+                    <a href="Account/ForgotPassword" class="text-muted">Esqueceu a sua senha?</a>
+                </div>
+                <label for="Input.Password" class="form-label">Senha</label>
+                <div class="position-relative auth-pass-inputgroup mb-3">
+                    <InputText type="password" @bind-Value="Input.Password" id="Input.Password" class="form-control pe-5 password-input" autocomplete="current-password" aria-required="true" placeholder="Digite sua senha" />
+                    <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                </div>
+                <ValidationMessage For="() => Input.Password" class="invalid-feedback" />
+            </div>
+
+            <div class="form-check">
+                <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" id="auth-remember-check" />
+                <label class="form-check-label" for="auth-remember-check">Lembre-me</label>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-success w-100" type="submit">Entrar</button>
+            </div>
+        </EditForm>
+
+        <div class="mt-4 text-center">            
+            <div class="signin-other-title">
+                <h5 class="fs-13 mb-4 title">Acessar com</h5>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
+                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
+                <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
+                <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+            </div>
             <ExternalLoginPicker />
-        </section>
+        </div>
+
+
     </div>
+
+    <div class="mt-5 text-center">
+        <p class="mb-0">Ainda não tem uma conta? <a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))" class="fw-semibold text-primary text-decoration-underline"> Cadastre-se</a> </p>
+        <br/>
+        <p><a href="Account/ResendEmailConfirmation">Reenviar email de confirmação</a></p>
+    </div>
+    
 </div>
 
 @code {
