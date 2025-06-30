@@ -1742,6 +1742,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "GestaoSpaceEdu.Domain": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "9.0.6",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "9.0.6"
         },
@@ -1750,6 +1751,19 @@
         },
         "runtime": {
           "bin/placeholder/GestaoSpaceEdu.Client.dll": {}
+        }
+      },
+      "GestaoSpaceEdu.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Stores": "9.0.6"
+        },
+        "compile": {
+          "bin/placeholder/GestaoSpaceEdu.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestaoSpaceEdu.Domain.dll": {}
         }
       }
     }
@@ -5097,11 +5111,17 @@
       "type": "project",
       "path": "../GestaoSpaceEdu.Client/GestaoSpaceEdu.Client.csproj",
       "msbuildProject": "../GestaoSpaceEdu.Client/GestaoSpaceEdu.Client.csproj"
+    },
+    "GestaoSpaceEdu.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../GestaoSpaceEdu.Domain/GestaoSpaceEdu.Domain.csproj",
+      "msbuildProject": "../../GestaoSpaceEdu.Domain/GestaoSpaceEdu.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "GestaoSpaceEdu.Client >= 1.0.0",
+      "GestaoSpaceEdu.Domain >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 9.0.6",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 9.0.6",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.6",
@@ -5150,6 +5170,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu.Domain\\GestaoSpaceEdu.Domain.csproj": {
+              "projectPath": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu.Domain\\GestaoSpaceEdu.Domain.csproj"
+            },
             "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj": {
               "projectPath": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj"
             }
