@@ -83,6 +83,187 @@ namespace GestaoSpaceEdu.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Account", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("BalanceDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("Accounts");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Complement")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("LegalName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Neighborhood")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TaxId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TradeName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Companies");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.DocumentAttachment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FinancialTransactionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FinancialTransactionId");
+
+                    b.ToTable("DocumentAttachments");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AccountId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("AmoundPaid")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTimeOffset>("DueDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<decimal>("InterestPenalty")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Observation")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTimeOffset>("PaymentDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTimeOffset>("ReferenceDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Repeat")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("RepeatTimes")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("FinancialTransactions");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -211,6 +392,56 @@ namespace GestaoSpaceEdu.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Account", b =>
+                {
+                    b.HasOne("GestaoSpaceEdu.Domain.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
+
+                    b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Company", b =>
+                {
+                    b.HasOne("GestaoSpaceEdu.Data.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.DocumentAttachment", b =>
+                {
+                    b.HasOne("GestaoSpaceEdu.Domain.FinancialTransaction", "FinancialTransaction")
+                        .WithMany("DocumentAttachments")
+                        .HasForeignKey("FinancialTransactionId");
+
+                    b.Navigation("FinancialTransaction");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
+                {
+                    b.HasOne("GestaoSpaceEdu.Domain.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId");
+
+                    b.HasOne("GestaoSpaceEdu.Domain.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId");
+
+                    b.HasOne("GestaoSpaceEdu.Domain.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
+
+                    b.Navigation("Account");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Company");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -260,6 +491,11 @@ namespace GestaoSpaceEdu.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
+                {
+                    b.Navigation("DocumentAttachments");
                 });
 #pragma warning restore 612, 618
         }

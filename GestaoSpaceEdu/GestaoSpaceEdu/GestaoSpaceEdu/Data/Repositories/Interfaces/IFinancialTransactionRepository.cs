@@ -1,0 +1,15 @@
+﻿using GestaoSpaceEdu.Client.Libraries.Utilities;
+using GestaoSpaceEdu.Domain;
+using GestaoSpaceEdu.Domain.Enums;
+
+namespace GestaoSpaceEdu.Data.Repositories.Interfaces
+{
+    public interface IFinancialTransactionRepository
+    {
+        Task AddAsync(FinancialTransaction financialTransaction);
+        Task DeleteAsync(int id);
+        Task<PaginatedList<FinancialTransaction>> GetAllAsync(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize);
+        Task<FinancialTransaction?> GetAsync(int id);
+        Task UpdateAsync(FinancialTransaction financialTransaction);
+    }
+}

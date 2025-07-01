@@ -32,6 +32,12 @@ CREATE TABLE `AspNetUsers` (
     PRIMARY KEY (`Id`)
 );
 
+CREATE TABLE `Categories` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Name` longtext NOT NULL,
+    PRIMARY KEY (`Id`)
+);
+
 CREATE TABLE `AspNetRoleClaims` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `RoleId` varchar(255) NOT NULL,
@@ -76,6 +82,66 @@ CREATE TABLE `AspNetUserTokens` (
     CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
 );
 
+CREATE TABLE `Companies` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `LegalName` longtext NOT NULL,
+    `TradeName` longtext NOT NULL,
+    `TaxId` longtext NOT NULL,
+    `PostalCode` longtext NOT NULL,
+    `State` longtext NOT NULL,
+    `City` longtext NOT NULL,
+    `Neighborhood` longtext NOT NULL,
+    `Address` longtext NOT NULL,
+    `Complement` longtext NOT NULL,
+    `CreatedAt` datetime NOT NULL,
+    `UserId` varchar(255) NOT NULL,
+    PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Companies_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
+);
+
+CREATE TABLE `Accounts` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Description` longtext NOT NULL,
+    `Balance` decimal(18,2) NOT NULL,
+    `BalanceDate` datetime(6) NOT NULL,
+    `CompanyId` int NULL,
+    PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Accounts_Companies_CompanyId` FOREIGN KEY (`CompanyId`) REFERENCES `Companies` (`Id`)
+);
+
+CREATE TABLE `FinancialTransactions` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Description` longtext NOT NULL,
+    `ReferenceDate` datetime NOT NULL,
+    `DueDate` datetime NOT NULL,
+    `Amount` decimal(18,2) NOT NULL,
+    `Repeat` longtext NOT NULL,
+    `RepeatTimes` int NOT NULL,
+    `InterestPenalty` decimal(18,2) NOT NULL,
+    `Discount` decimal(18,2) NOT NULL,
+    `PaymentDate` datetime NOT NULL,
+    `AmoundPaid` decimal(18,2) NOT NULL,
+    `Observation` longtext NULL,
+    `CreatedAt` datetime NOT NULL,
+    `CompanyId` int NULL,
+    `AccountId` int NULL,
+    `CategoryId` int NULL,
+    PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_FinancialTransactions_Accounts_AccountId` FOREIGN KEY (`AccountId`) REFERENCES `Accounts` (`Id`),
+    CONSTRAINT `FK_FinancialTransactions_Categories_CategoryId` FOREIGN KEY (`CategoryId`) REFERENCES `Categories` (`Id`),
+    CONSTRAINT `FK_FinancialTransactions_Companies_CompanyId` FOREIGN KEY (`CompanyId`) REFERENCES `Companies` (`Id`)
+);
+
+CREATE TABLE `DocumentAttachments` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Path` longtext NOT NULL,
+    `FinancialTransactionId` int NULL,
+    PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_DocumentAttachments_FinancialTransactions_FinancialTransacti~` FOREIGN KEY (`FinancialTransactionId`) REFERENCES `FinancialTransactions` (`Id`)
+);
+
+CREATE INDEX `IX_Accounts_CompanyId` ON `Accounts` (`CompanyId`);
+
 CREATE INDEX `IX_AspNetRoleClaims_RoleId` ON `AspNetRoleClaims` (`RoleId`);
 
 CREATE UNIQUE INDEX `RoleNameIndex` ON `AspNetRoles` (`NormalizedName`);
@@ -90,8 +156,18 @@ CREATE INDEX `EmailIndex` ON `AspNetUsers` (`NormalizedEmail`);
 
 CREATE UNIQUE INDEX `UserNameIndex` ON `AspNetUsers` (`NormalizedUserName`);
 
+CREATE INDEX `IX_Companies_UserId` ON `Companies` (`UserId`);
+
+CREATE INDEX `IX_DocumentAttachments_FinancialTransactionId` ON `DocumentAttachments` (`FinancialTransactionId`);
+
+CREATE INDEX `IX_FinancialTransactions_AccountId` ON `FinancialTransactions` (`AccountId`);
+
+CREATE INDEX `IX_FinancialTransactions_CategoryId` ON `FinancialTransactions` (`CategoryId`);
+
+CREATE INDEX `IX_FinancialTransactions_CompanyId` ON `FinancialTransactions` (`CompanyId`);
+
 INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
-VALUES ('20250625104720_v1', '9.0.6');
+VALUES ('20250701090751_v1', '9.0.6');
 
 COMMIT;
 

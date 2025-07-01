@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GestaoSpaceEdu.Client",
   "resources": {
-    "hash": "sha256-4mee5QJoAyHnZJ7WMm+CtPY0YfwfuhhyRQ4/i6H8SwU=",
+    "hash": "sha256-+Zit8HIwKhlUmLj30rhfqv72LdcN6InS6n32pW+pCuM=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.phaa9r44xv.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.4o2vz6uw5j.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -10,7 +10,10 @@
       "Microsoft.AspNetCore.Components.Web.wjexe30cog.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.2yt2k81j3x.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.Authentication.hlbn62k9y7.wasm": "Microsoft.AspNetCore.Components.WebAssembly.Authentication.wasm",
+      "Microsoft.AspNetCore.Cryptography.Internal.3ohbzypcu5.wasm": "Microsoft.AspNetCore.Cryptography.Internal.wasm",
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation.3k0xg252na.wasm": "Microsoft.AspNetCore.Cryptography.KeyDerivation.wasm",
       "Microsoft.AspNetCore.Metadata.4eagaotj1c.wasm": "Microsoft.AspNetCore.Metadata.wasm",
+      "Microsoft.Extensions.Caching.Abstractions.fz1ejhoua0.wasm": "Microsoft.Extensions.Caching.Abstractions.wasm",
       "Microsoft.Extensions.Configuration.a20cmtwj3w.wasm": "Microsoft.Extensions.Configuration.wasm",
       "Microsoft.Extensions.Configuration.Abstractions.jdjwdbrxb5.wasm": "Microsoft.Extensions.Configuration.Abstractions.wasm",
       "Microsoft.Extensions.Configuration.Binder.y7ybdi8i13.wasm": "Microsoft.Extensions.Configuration.Binder.wasm",
@@ -21,6 +24,8 @@
       "Microsoft.Extensions.FileProviders.Abstractions.w4n6sx9nop.wasm": "Microsoft.Extensions.FileProviders.Abstractions.wasm",
       "Microsoft.Extensions.FileProviders.Physical.ily916jl2z.wasm": "Microsoft.Extensions.FileProviders.Physical.wasm",
       "Microsoft.Extensions.FileSystemGlobbing.sdsdr06lyk.wasm": "Microsoft.Extensions.FileSystemGlobbing.wasm",
+      "Microsoft.Extensions.Identity.Core.w5b7qsbcte.wasm": "Microsoft.Extensions.Identity.Core.wasm",
+      "Microsoft.Extensions.Identity.Stores.a7zgh44xpu.wasm": "Microsoft.Extensions.Identity.Stores.wasm",
       "Microsoft.Extensions.Logging.tgyhlz8gnr.wasm": "Microsoft.Extensions.Logging.wasm",
       "Microsoft.Extensions.Logging.Abstractions.7bglk34tl5.wasm": "Microsoft.Extensions.Logging.Abstractions.wasm",
       "Microsoft.Extensions.Options.bwt6p2r0a3.wasm": "Microsoft.Extensions.Options.wasm",
@@ -203,8 +208,10 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "GestaoSpaceEdu.Client.fkw9rb69vc.wasm": "GestaoSpaceEdu.Client.wasm",
-      "GestaoSpaceEdu.Client.xsjio85407.pdb": "GestaoSpaceEdu.Client.pdb"
+      "GestaoSpaceEdu.Domain.r9nedcn79o.wasm": "GestaoSpaceEdu.Domain.wasm",
+      "GestaoSpaceEdu.Domain.r0extnppnt.pdb": "GestaoSpaceEdu.Domain.pdb",
+      "GestaoSpaceEdu.Client.9qb8drptji.wasm": "GestaoSpaceEdu.Client.wasm",
+      "GestaoSpaceEdu.Client.8e2oohqqy1.pdb": "GestaoSpaceEdu.Client.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.rtblh4npr3.js": "sha256-HyBzcYNpT2l19+f1bpjNOa1oFoLe3K4JIQ6GsFK5m6I="
@@ -232,7 +239,10 @@
       "Microsoft.AspNetCore.Components.Web.wjexe30cog.wasm": "sha256-7IEhLHI4WHU94pzQsH0Imc7vFz/xozOl3e+WwJj4Q/c=",
       "Microsoft.AspNetCore.Components.WebAssembly.2yt2k81j3x.wasm": "sha256-GojMMsHQLaEvovHD2RL8dC0+ZBhqZnxwi6C9Py3ZVd8=",
       "Microsoft.AspNetCore.Components.WebAssembly.Authentication.hlbn62k9y7.wasm": "sha256-dSjbTzAo8F1K0eftE1NjlyzXjxyVgU2QEHdtJ7A0RuI=",
+      "Microsoft.AspNetCore.Cryptography.Internal.3ohbzypcu5.wasm": "sha256-M4molJ7F1lEQktx9jBb7FES9qz//eP4SSpSnleO8mfY=",
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation.3k0xg252na.wasm": "sha256-7VYyBrHPPd2QiZAP6FnlR0NkAbkSgK7XT+WP6D6Ehc0=",
       "Microsoft.AspNetCore.Metadata.4eagaotj1c.wasm": "sha256-nNIfMmCMSAl3ZNjukuZFngZhLEQI6vXuHmJwcloNMf0=",
+      "Microsoft.Extensions.Caching.Abstractions.fz1ejhoua0.wasm": "sha256-dSeLwqfiZ0LDIh4KVrGMC9lVzRzX3E25MDlP+XozRXo=",
       "Microsoft.Extensions.Configuration.a20cmtwj3w.wasm": "sha256-UrUUb9NBNLd0uMi5+Tdio9qxV8ddqaCNW2ast3KfP1U=",
       "Microsoft.Extensions.Configuration.Abstractions.jdjwdbrxb5.wasm": "sha256-F1OVGUAEgR1HPcC3sfXDM0JZypB4t4m0Xez/7bGD+70=",
       "Microsoft.Extensions.Configuration.Binder.y7ybdi8i13.wasm": "sha256-AsmkFYYodnrvBo49LFwyS3k8kodcN2UFNjcPR59Lt/4=",
@@ -243,6 +253,8 @@
       "Microsoft.Extensions.FileProviders.Abstractions.w4n6sx9nop.wasm": "sha256-oMosi3WCDcgXBFuSgSIpVKpNW4oZtOc2bo1iv/Iwqh0=",
       "Microsoft.Extensions.FileProviders.Physical.ily916jl2z.wasm": "sha256-mv8369HmOTLfxpfm73S1/TjOVIdtjUuMfd3CXoI+Qzs=",
       "Microsoft.Extensions.FileSystemGlobbing.sdsdr06lyk.wasm": "sha256-EJTKq+jP+NixmNBwLuabQrEKBouNaMM2SAGl/HjaP6k=",
+      "Microsoft.Extensions.Identity.Core.w5b7qsbcte.wasm": "sha256-vNFAOQZGFr3KLNzr1Cdy5rN1Xkijp0+r4SF/7i7rrls=",
+      "Microsoft.Extensions.Identity.Stores.a7zgh44xpu.wasm": "sha256-yiji8brRC9/DyqFo1d7ylXr5sWHXdXU5qMa9DK6bnOM=",
       "Microsoft.Extensions.Logging.tgyhlz8gnr.wasm": "sha256-ven6g8dRYNpFVKVQpfaV4E4UeaZIB6J5sp+4Vg40org=",
       "Microsoft.Extensions.Logging.Abstractions.7bglk34tl5.wasm": "sha256-LbqNFiczB9qwkZqoo1ig7ySL187gUWgMKNc4Lt/3ll8=",
       "Microsoft.Extensions.Options.bwt6p2r0a3.wasm": "sha256-240HONkBeTMj+px7kStA4wZzCAbBgKM14lDROyv0JRQ=",
@@ -416,17 +428,19 @@
       "WindowsBase.u25hol0de4.wasm": "sha256-CgB28KCiYKHd4yK6IM0PJ526P7IbRCpNkGTqn+cLwxs=",
       "mscorlib.brg9pkj3je.wasm": "sha256-FzZwzxUYYyg3qxc7Km8r50UKAmRWrIeckSFG1NTHKNU=",
       "netstandard.wuzd3f1y6v.wasm": "sha256-yAXc0deBIRkWTVXqADZfhgZtrxGgJCIbZYVtA0NjvdM=",
-      "GestaoSpaceEdu.Client.fkw9rb69vc.wasm": "sha256-4UsWrJdriyv8my+ZRhBr4C4y1FT4YPOLMnzcZFoPd/Y="
+      "GestaoSpaceEdu.Domain.r9nedcn79o.wasm": "sha256-sYWxqHbiGLeRxQ3TD8x7ogT8LrIXoY+p2UppXzf2PQw=",
+      "GestaoSpaceEdu.Client.9qb8drptji.wasm": "sha256-YTZTV5nlVT80DDJrs8raFUiye+fUqifiWHNIhzIoMQU="
     },
     "pdb": {
-      "GestaoSpaceEdu.Client.xsjio85407.pdb": "sha256-P0NW2rcrrTKu/2AwhFKRZ9FixHjpUtAmG3z3TMZ7WWo="
+      "GestaoSpaceEdu.Domain.r0extnppnt.pdb": "sha256-O46rWSDzi60gyl2KfMx+7MQL61n9utAGqzSVESniBzE=",
+      "GestaoSpaceEdu.Client.8e2oohqqy1.pdb": "sha256-4MESsIBzJE+2YW1LImACGRw+tv77hYWTcOzyyKHhJOA="
     }
   },
   "cacheBootResources": true,
   "debugLevel": -1,
   "appsettings": [
-    "../appsettings.Development.json",
-    "../appsettings.json"
+    "../appsettings.json",
+    "../appsettings.Development.json"
   ],
   "globalizationMode": "sharded",
   "extensions": {

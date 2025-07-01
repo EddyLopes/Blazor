@@ -1,9 +1,4 @@
 ﻿using GestaoSpaceEdu.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestaoSpaceEdu.Domain;
 
@@ -19,7 +14,7 @@ public class Company
     public string Neighborhood { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
     public string Complement { get; set; } = string.Empty;
-    public DateTimeOffset CreatedAt { get; set; }   
-    public Guid UderId { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
+    public string UserId { get; set; } = null!;
     public ApplicationUser User { get; set; } = null!;
 }

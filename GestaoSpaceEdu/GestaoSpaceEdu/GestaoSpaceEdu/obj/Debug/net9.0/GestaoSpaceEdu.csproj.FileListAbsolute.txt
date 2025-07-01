@@ -3268,6 +3268,7 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\r
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\runtimes\win-x64\native\krb5_64.dll
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\runtimes\win-x64\native\krbcc64.dll
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
-C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\rk9ei4ls1g-z9arwykn2k.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\nrrxgtnfw9-z9arwykn2k.gz
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\GestaoSpaceEdu.Domain.dll
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\GestaoSpaceEdu.Domain.pdb

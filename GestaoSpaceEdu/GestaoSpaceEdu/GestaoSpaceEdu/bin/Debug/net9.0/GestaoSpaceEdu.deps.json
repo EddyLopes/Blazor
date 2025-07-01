@@ -9,6 +9,7 @@
       "GestaoSpaceEdu/1.0.0": {
         "dependencies": {
           "GestaoSpaceEdu.Client": "1.0.0",
+          "GestaoSpaceEdu.Domain": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "9.0.6",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "9.0.6",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.6",
@@ -1082,11 +1083,23 @@
       },
       "GestaoSpaceEdu.Client/1.0.0": {
         "dependencies": {
+          "GestaoSpaceEdu.Domain": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "9.0.6",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "9.0.6"
         },
         "runtime": {
           "GestaoSpaceEdu.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "GestaoSpaceEdu.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Stores": "9.0.6"
+        },
+        "runtime": {
+          "GestaoSpaceEdu.Domain.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1731,6 +1744,11 @@
       "hashPath": "zstdsharp.port.0.8.5.nupkg.sha512"
     },
     "GestaoSpaceEdu.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GestaoSpaceEdu.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,9 +1,27 @@
+using GestaoSpaceEdu.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace GestaoSpaceEdu.Data
+namespace GestaoSpaceEdu.Data;
+
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
-    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
+    public DbSet<Company> Companies { get; set; }
+    public DbSet<Account> Accounts { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<FinancialTransaction> FinancialTransactions { get; set; }
+    public DbSet<DocumentAttachment> DocumentAttachments { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
     {
+        base.OnModelCreating(builder);
+
+        builder.Entity<FinancialTransaction>()
+               .Property(x => x.Repeat)
+               .HasConversion<string>();
+
+        builder.Entity<FinancialTransaction>()
+       .Property(x => x.TypeFinancialTransaction)
+       .HasConversion<string>();
     }
 }
