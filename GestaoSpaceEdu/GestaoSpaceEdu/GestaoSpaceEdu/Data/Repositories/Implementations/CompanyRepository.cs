@@ -14,14 +14,19 @@ public class CompanyRepository : ICompanyRepository
         _context = context;
     }
 
-    public async Task<PaginatedList<Company>> GetAllAsync(string applicationUserId, int pageIndex, int pageSize)
+    public async Task<PaginatedList<Company>> GetAllAsync(string applicationUserId, int pageIndex, int pageSize, string searchWord = "")
     {
         var items = await _context.Companies.Where(x => x.UserId == applicationUserId)
+                                            .Where(x => x.TradeName.Contains(searchWord) || x.LegalName.Contains(searchWord))
+                                            .OrderBy(x => x.TradeName)
                                             .Skip((pageIndex - 1) * pageSize)
                                             .Take(pageSize)
                                             .ToListAsync();
 
-        var count = await _context.Companies.Where(x => x.UserId == applicationUserId).CountAsync();
+        var count = await _context.Companies.Where(x => x.UserId == applicationUserId)
+                                            .Where(x => x.TradeName.Contains(searchWord) || x.LegalName.Contains(searchWord))
+                                            .CountAsync();
+
         var totalPages = (int)Math.Ceiling((decimal)count / pageSize);
         return new PaginatedList<Company>(items, pageIndex, totalPages);
     }

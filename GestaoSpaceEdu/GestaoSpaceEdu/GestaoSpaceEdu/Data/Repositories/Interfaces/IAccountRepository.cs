@@ -8,7 +8,7 @@ namespace GestaoSpaceEdu.Data.Repositories.Interfaces
         Task AddAsync(Account account);
         Task DeleteAsync(int id);
         Task<List<Account>> GetAllAsync(int companyId);
-        Task<PaginatedList<Account>> GetAllAsync(int companyId, int pageIndex, int pageSize);
+        Task<PaginatedList<Account>> GetAllAsync(int companyId, int pageIndex, int pageSize, string searchWord = "");
         Task<Account?> GetAsync(int id);
         Task UpdateAsync(Account account);
     }

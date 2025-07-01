@@ -14,14 +14,19 @@ public class AccountRepository : IAccountRepository
         _context = context;
     }
 
-    public async Task<PaginatedList<Account>> GetAllAsync(int companyId, int pageIndex, int pageSize)
+    public async Task<PaginatedList<Account>> GetAllAsync(int companyId, int pageIndex, int pageSize, string searchWord = "")
     {
         var items = await _context.Accounts.Where(x => x.CompanyId == companyId)
-                                             .Skip((pageIndex - 1) * pageSize)
-                                             .Take(pageSize)
-                                             .ToListAsync();
+                                           .Where(x => x.Description.Contains(searchWord))
+                                           .OrderBy(x => x.Description)
+                                           .Skip((pageIndex - 1) * pageSize)
+                                           .Take(pageSize)
+                                           .ToListAsync();
 
-        var count = await _context.Accounts.Where(x => x.CompanyId == companyId).CountAsync();
+        var count = await _context.Accounts.Where(x => x.CompanyId == companyId)
+                                           .Where(x => x.Description.Contains(searchWord))
+                                           .CountAsync();
+
         var totalPages = (int)Math.Ceiling((decimal)count / pageSize);
         return new PaginatedList<Account>(items, pageIndex, totalPages);
     }

@@ -17,6 +17,7 @@ public class CategoryRepository : ICategoryRepository
     public async Task<PaginatedList<Category>> GetAllAsync(int companyId, int pageIndex, int pageSize)
     {
         var items = await _context.Categories.Where(x => x.CompanyId == companyId)
+                                             .OrderBy(x => x.Name)
                                              .Skip((pageIndex - 1) * pageSize)
                                              .Take(pageSize)
                                              .ToListAsync();

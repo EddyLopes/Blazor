@@ -3,6 +3,8 @@ using GestaoSpaceEdu.Components;
 using GestaoSpaceEdu.Components.Account;
 using GestaoSpaceEdu.Data;
 using GestaoSpaceEdu.Data.Libraries.Mail;
+using GestaoSpaceEdu.Data.Repositories.Implementations;
+using GestaoSpaceEdu.Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -29,17 +31,20 @@ builder.Services.AddAuthentication(options =>
     })
     .AddIdentityCookies();
 
+
+#region Config of Database & Authentication
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySQL(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddSignInManager()
-    .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddSignInManager()
+                .AddDefaultTokenProviders();
+#endregion
 
-
+#region Dependency Injection
 builder.Services.AddSingleton<SmtpClient>(options => 
 { 
     var smtp = new SmtpClient();
@@ -51,6 +56,14 @@ builder.Services.AddSingleton<SmtpClient>(options =>
     return smtp;
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
+
+builder.Services.AddScoped<IAccountRepository,AccountRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
+builder.Services.AddScoped<IFinancialTransactionRepository, FinancialTransactionRepository>();
+#endregion
+
 
 var app = builder.Build();
 

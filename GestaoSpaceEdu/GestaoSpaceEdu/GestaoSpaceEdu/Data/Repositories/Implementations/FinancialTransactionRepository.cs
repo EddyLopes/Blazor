@@ -15,21 +15,28 @@ public class FinancialTransactionRepository : IFinancialTransactionRepository
         _context = context;
     }
 
-    public async Task<PaginatedList<FinancialTransaction>> GetAllAsync(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize)
+    public async Task<PaginatedList<FinancialTransaction>> GetAllAsync(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize, string searchWord = "")
     {
         var items = await _context.FinancialTransactions.Where(x => x.CompanyId == companyId && x.TypeFinancialTransaction == type)
-                                            .Skip((pageIndex - 1) * pageSize)
-                                            .Take(pageSize)
-                                            .ToListAsync();
+                                                        .Where(x => x.Description.Contains(searchWord))
+                                                        .OrderByDescending(x => x.ReferenceDate)
+                                                        .Skip((pageIndex - 1) * pageSize)
+                                                        .Take(pageSize)
+                                                        .ToListAsync();
 
-        var count = await _context.FinancialTransactions.Where(x => x.CompanyId == companyId && x.TypeFinancialTransaction == type).CountAsync();
+        var count = await _context.FinancialTransactions.Where(x => x.CompanyId == companyId && x.TypeFinancialTransaction == type)
+                                                        .Where(x => x.Description.Contains(searchWord))
+                                                        .CountAsync();
+
         var totalPages = (int)Math.Ceiling((decimal)count / pageSize);
         return new PaginatedList<FinancialTransaction>(items, pageIndex, totalPages);
     }
 
     public async Task<FinancialTransaction?> GetAsync(int id)
     {
-        return await _context.FinancialTransactions.SingleOrDefaultAsync(x => x.Id == id);
+        return await _context.FinancialTransactions
+                             .Include(x => x.Documents)
+                             .SingleOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task AddAsync(FinancialTransaction financialTransaction)
