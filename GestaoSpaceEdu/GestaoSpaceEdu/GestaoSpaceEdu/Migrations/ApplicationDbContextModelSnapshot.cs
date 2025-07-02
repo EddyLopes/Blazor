@@ -115,11 +115,16 @@ namespace GestaoSpaceEdu.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
 
                     b.ToTable("Categories");
                 });
@@ -180,7 +185,7 @@ namespace GestaoSpaceEdu.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.DocumentAttachment", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Document", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -197,7 +202,7 @@ namespace GestaoSpaceEdu.Migrations
 
                     b.HasIndex("FinancialTransactionId");
 
-                    b.ToTable("DocumentAttachments");
+                    b.ToTable("Documents");
                 });
 
             modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
@@ -252,6 +257,10 @@ namespace GestaoSpaceEdu.Migrations
 
                     b.Property<int>("RepeatTimes")
                         .HasColumnType("int");
+
+                    b.Property<string>("TypeFinancialTransaction")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -401,6 +410,15 @@ namespace GestaoSpaceEdu.Migrations
                     b.Navigation("Company");
                 });
 
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Category", b =>
+                {
+                    b.HasOne("GestaoSpaceEdu.Domain.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
+
+                    b.Navigation("Company");
+                });
+
             modelBuilder.Entity("GestaoSpaceEdu.Domain.Company", b =>
                 {
                     b.HasOne("GestaoSpaceEdu.Data.ApplicationUser", "User")
@@ -412,10 +430,10 @@ namespace GestaoSpaceEdu.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.DocumentAttachment", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Document", b =>
                 {
                     b.HasOne("GestaoSpaceEdu.Domain.FinancialTransaction", "FinancialTransaction")
-                        .WithMany("DocumentAttachments")
+                        .WithMany("Documents")
                         .HasForeignKey("FinancialTransactionId");
 
                     b.Navigation("FinancialTransaction");
@@ -495,7 +513,7 @@ namespace GestaoSpaceEdu.Migrations
 
             modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
                 {
-                    b.Navigation("DocumentAttachments");
+                    b.Navigation("Documents");
                 });
 #pragma warning restore 612, 618
         }

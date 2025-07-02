@@ -1,12 +1,13 @@
-using GestaoSpaceEdu.Client.Pages;
 using GestaoSpaceEdu.Components;
 using GestaoSpaceEdu.Components.Account;
 using GestaoSpaceEdu.Data;
 using GestaoSpaceEdu.Data.Libraries.Mail;
 using GestaoSpaceEdu.Data.Repositories.Implementations;
 using GestaoSpaceEdu.Data.Repositories.Interfaces;
+using GestaoSpaceEdu.Domain.Enums;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Mail;
@@ -93,5 +94,46 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
+
+#region Minimal APIs
+int pageSize = builder.Configuration.GetValue<int>("Pagination:PageSize");
+                
+app.MapGet("/api/categories", async (ICategoryRepository repository, 
+                                     [FromQuery] int companyId, 
+                                     [FromQuery] int pageIndex) => 
+{
+    var data = await repository.GetAllAsync(companyId, pageIndex, pageSize);
+    return Results.Ok(data);
+});
+
+app.MapGet("/api/companies", async (ICompanyRepository repository,
+                                    [FromQuery] string applicationUserId,
+                                    [FromQuery] int pageIndex,
+                                    [FromQuery] string searchWord) =>
+{
+    var data = await repository.GetAllAsync(applicationUserId, pageIndex, pageSize, searchWord);
+    return Results.Ok(data);
+});
+
+app.MapGet("/api/accounts", async (IAccountRepository repository,
+                                   [FromQuery] int companyId,
+                                   [FromQuery] int pageIndex,
+                                   [FromQuery] string searchWord) =>
+{
+    var data = await repository.GetAllAsync(companyId, pageIndex, pageSize, searchWord);
+    return Results.Ok(data);
+});
+
+app.MapGet("/api/financialtransactions", async (IFinancialTransactionRepository repository,
+                                                [FromQuery] int companyId,
+                                                [FromQuery] TypeFinancialTransaction type,
+                                                [FromQuery] int pageIndex,
+                                                [FromQuery] string searchWord) =>
+{
+    
+    var data = await repository.GetAllAsync(companyId, type, pageIndex, pageSize, searchWord);
+    return Results.Ok(data);
+});
+#endregion
 
 app.Run();

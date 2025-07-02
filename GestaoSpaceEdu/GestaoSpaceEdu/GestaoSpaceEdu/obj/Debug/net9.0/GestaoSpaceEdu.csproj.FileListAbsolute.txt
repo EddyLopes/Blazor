@@ -3272,3 +3272,4 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\c
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\nrrxgtnfw9-z9arwykn2k.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\GestaoSpaceEdu.Domain.dll
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\GestaoSpaceEdu.Domain.pdb
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
