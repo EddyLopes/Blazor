@@ -1,4 +1,4 @@
-using GestaoSpaceEdu.Data;
+using GestaoSpaceEdu.Domain;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 

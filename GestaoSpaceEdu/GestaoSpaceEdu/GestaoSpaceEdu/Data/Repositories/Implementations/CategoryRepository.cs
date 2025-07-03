@@ -1,6 +1,6 @@
-﻿using GestaoSpaceEdu.Client.Libraries.Utilities;
-using GestaoSpaceEdu.Data.Repositories.Interfaces;
-using GestaoSpaceEdu.Domain;
+﻿using GestaoSpaceEdu.Domain;
+using GestaoSpaceEdu.Domain.Libraries.Utilities;
+using GestaoSpaceEdu.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestaoSpaceEdu.Data.Repositories.Implementations;

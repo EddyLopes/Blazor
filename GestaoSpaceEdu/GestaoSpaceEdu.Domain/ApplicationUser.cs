@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace GestaoSpaceEdu.Data
+namespace GestaoSpaceEdu.Domain
 {
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser

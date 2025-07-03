@@ -1,4 +1,4 @@
-using GestaoSpaceEdu.Data;
+using GestaoSpaceEdu.Domain;
 using Microsoft.AspNetCore.Identity;
 
 namespace GestaoSpaceEdu.Components.Account

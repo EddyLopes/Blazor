@@ -1,6 +1,4 @@
-﻿using GestaoSpaceEdu.Data;
-
-namespace GestaoSpaceEdu.Domain;
+﻿namespace GestaoSpaceEdu.Domain;
 
 public class Company
 {
