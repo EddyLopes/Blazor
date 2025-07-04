@@ -33,3 +33,7 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\n
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\net9.0\staticwebassets.build.json
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\net9.0\staticwebassets.build.json
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu.Client\obj\Debug\net9.0\staticwebassets.build.json

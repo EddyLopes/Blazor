@@ -188,6 +188,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRGVmYXVsdFxEZWZhdWx0TGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Company/Add.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wYW55XEFkZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

@@ -2,188 +2,123 @@
 @attribute [Authorize]
 @rendermode InteractiveAuto
 
-<div class="col-xl-8">
-    <div class="card">
-        <div class="card-header align-items-center d-flex">
-            <h4 class="card-title mb-0 flex-grow-1">Empresas</h4>
-            <div class="flex-shrink-0">
-                <button type="button" class="btn btn-soft-info btn-sm material-shadow-none">
-                    <i class="ri-file-list-3-line align-middle"></i> Cadastrar
-                </button>
-            </div>
-        </div><!-- end card header -->
+<PageTitle>
+    Empresa - Lista
+</PageTitle>
 
-        <div class="card-body">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Digite sua pesquisa" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-success material-shadow-none" type="button" id="button-addon2">Pesquisar</button>
-                </div>
-            </div>
-            <div class="table-responsive mt-4" style="margin-left: -16px; margin-right: -16px;">
-                <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
-                    <thead class="text-muted table-light">
-                        <tr>
-                            <th scope="col">Nome fantasia</th>
-                            <th scope="col">CNPJ</th>
-                            <th scope="col">Endereço</th>
-                            <th scope="col">Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2112</a>
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 me-2">
-                                        <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle material-shadow">
-                                    </div>
-                                    <div class="flex-grow-1">Alex Smith</div>
-                                </div>
-                            </td>
-                            <td>Clothes</td>
-                            <td>
-                                <span class="text-success">$109.00</span>
-                            </td>
-                            <td>Zoetic Fashion</td>
-                            <td>
-                                <span class="badge bg-success-subtle text-success">Paid</span>
-                            </td>
-                            <td>
-                                <h5 class="fs-14 fw-medium mb-0">5.0<span class="text-muted fs-11 ms-1">(61 votes)</span></h5>
-                            </td>
-                        </tr><!-- end tr -->
-                        <tr>
-                            <td>
-                                <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2111</a>
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 me-2">
-                                        <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle material-shadow">
-                                    </div>
-                                    <div class="flex-grow-1">Jansh Brown</div>
-                                </div>
-                            </td>
-                            <td>Kitchen Storage</td>
-                            <td>
-                                <span class="text-success">$149.00</span>
-                            </td>
-                            <td>Micro Design</td>
-                            <td>
-                                <span class="badge bg-warning-subtle text-warning">Pending</span>
-                            </td>
-                            <td>
-                                <h5 class="fs-14 fw-medium mb-0">4.5<span class="text-muted fs-11 ms-1">(61 votes)</span></h5>
-                            </td>
-                        </tr><!-- end tr -->
-                        <tr>
-                            <td>
-                                <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2109</a>
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 me-2">
-                                        <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle material-shadow">
-                                    </div>
-                                    <div class="flex-grow-1">Ayaan Bowen</div>
-                                </div>
-                            </td>
-                            <td>Bike Accessories</td>
-                            <td>
-                                <span class="text-success">$215.00</span>
-                            </td>
-                            <td>Nesta Technologies</td>
-                            <td>
-                                <span class="badge bg-success-subtle text-success">Paid</span>
-                            </td>
-                            <td>
-                                <h5 class="fs-14 fw-medium mb-0">4.9<span class="text-muted fs-11 ms-1">(89 votes)</span></h5>
-                            </td>
-                        </tr><!-- end tr -->
-                        <tr>
-                            <td>
-                                <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2108</a>
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 me-2">
-                                        <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle material-shadow">
-                                    </div>
-                                    <div class="flex-grow-1">Prezy Mark</div>
-                                </div>
-                            </td>
-                            <td>Furniture</td>
-                            <td>
-                                <span class="text-success">$199.00</span>
-                            </td>
-                            <td>Syntyce Solutions</td>
-                            <td>
-                                <span class="badge bg-danger-subtle text-danger">Unpaid</span>
-                            </td>
-                            <td>
-                                <h5 class="fs-14 fw-medium mb-0">4.3<span class="text-muted fs-11 ms-1">(47 votes)</span></h5>
-                            </td>
-                        </tr><!-- end tr -->
-                        <tr>
-                            <td>
-                                <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2107</a>
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0 me-2">
-                                        <img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle material-shadow">
-                                    </div>
-                                    <div class="flex-grow-1">Vihan Hudda</div>
-                                </div>
-                            </td>
-                            <td>Bags and Wallets</td>
-                            <td>
-                                <span class="text-success">$330.00</span>
-                            </td>
-                            <td>iTest Factory</td>
-                            <td>
-                                <span class="badge bg-success-subtle text-success">Paid</span>
-                            </td>
-                            <td>
-                                <h5 class="fs-14 fw-medium mb-0">4.7<span class="text-muted fs-11 ms-1">(161 votes)</span></h5>
-                            </td>
-                        </tr><!-- end tr -->
-                    </tbody><!-- end tbody -->
-                </table><!-- end table -->
-            </div>
-            <div class="align-items-center mt-4 pt-2 justify-content-between row text-center text-sm-start">
-                <div class="col-sm">
-                    <div class="text-muted">
-                        Showing <span class="fw-semibold">5</span> of <span class="fw-semibold">25</span> Results
-                    </div>
-                </div>
-                <div class="col-sm-auto  mt-3 mt-sm-0">
-                    <ul class="pagination pagination-separated pagination-sm mb-0 justify-content-center">
-                        <li class="page-item disabled">
-                            <a href="#" class="page-link">←</a>
-                        </li>
-                        <li class="page-item">
-                            <a href="#" class="page-link">1</a>
-                        </li>
-                        <li class="page-item active">
-                            <a href="#" class="page-link">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a href="#" class="page-link">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a href="#" class="page-link">→</a>
-                        </li>
-                    </ul>
-                </div>
+<div class="card">
+    <div class="card-header align-items-center d-flex">
+        <h4 class="card-title mb-0 flex-grow-1">Empresas</h4>
+        <div class="flex-shrink-0">
+            <a href="/Company/Add" class="btn btn-primary btn-sm material-shadow-none">
+                <i class="ri-file-list-3-line align-middle"></i> Cadastrar
+            </a>
+        </div>
+    </div><!-- end card header -->
+
+    <div class="card-body">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Digite sua pesquisa" @bind="SearchWord">
+                <button class="btn btn-outline-success material-shadow-none" type="button" @onclick="OnSearch">Pesquisar</button>
             </div>
         </div>
-    </div> <!-- .card-->
-</div>
-
+        <div class="table-responsive mt-4" style="margin-left: -16px; margin-right: -16px;">
+            <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
+                <thead class="text-muted table-light">
+                    <tr>
+                        <th scope="col">Nome fantasia</th>
+                        <th scope="col">CNPJ</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Paginated == null)
+                    {
+                        <tr>
+                            <td colspan="4">Carregando...</td>
+                        </tr>
+                    }
+                    else if (Paginated.Items.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="4">Nenhum registro!</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Paginated.Items)
+                        {
+                            <tr>
+                                <td>
+                                    @item.TradeName
+                                </td>
+                                <td>
+                                    @item.TaxId
+                                </td>
+                                <td>@item.Address</td>
+                                <td>
+                                    <button class="btn btn-sm btn-soft-success" @onclick="() => SelectCompany(item)"><i class=" ri-arrow-right-line me-1"></i>Selecionar</button>
+                                    <a href="/Company/Edit/@item.Id" class="btn btn-sm btn-soft-info"><i class="ri-edit-line"></i></a>
+                                    <a href="/Company/Detail/@item.Id" class="btn btn-sm btn-soft-danger"><i class="ri-delete-bin-line"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody><!-- end tbody -->
+            </table><!-- end table -->
+        </div>
+        @* <Pagination /> *@
+    </div>
+</div> <!-- .card-->
 @code {
+    private string ApplicationUserId = string.Empty;
+    private int PageIndex = 1;
+    private int PageSize;
+    private string SearchWord = string.Empty;
+    private PaginatedList<Company>? Paginated;
 
+    [Inject]
+    public ICompanyRepository CompanyRepository { get; set; } = null!;
+
+    [Inject]
+    public IConfiguration Configuration { get; set; } = null!;
+
+    [Inject]
+    public AuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
+
+    // [Inject]
+    // public ILocalStorageService LocalStorage { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        PageSize = Configuration.GetValue<int>("Pagination:PageSize");
+        ApplicationUserId = (await AuthenticationHelper.GetAuthenticationUserIdAsync(AuthenticationStateProvider)).Value.ToString();
+        await LoadDataAsync();
+    }
+
+    private async Task OnSearch()
+    {
+        PageIndex = 1;
+        await LoadDataAsync();
+    }
+
+    private async Task OnPageChanged(int pageNumber)
+    {
+        PageIndex = pageNumber;
+        await LoadDataAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        Paginated = await CompanyRepository.GetAllAsync(ApplicationUserId, PageIndex, PageSize, SearchWord);
+    }
+
+    private async Task SelectCompany(Company company)
+    {
+        // await LocalStorage.SetItemAsync(AppConstants.LocalStorageCompany, company);
+
+        // Notification.NotificationOnSelected();
+    }
 }
