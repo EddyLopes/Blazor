@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using System.Net.Mail;
 
-namespace GestaoSpaceEdu.Data.Libraries.Mail;
+namespace GestaoSpaceEdu.Libraries.Mail;
 
 public class EmailSender(ILogger<EmailSender> logger, SmtpClient smtpClient, IConfiguration configuration) 
     : IEmailSender<ApplicationUser>

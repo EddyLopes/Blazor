@@ -1,11 +1,12 @@
 using GestaoSpaceEdu.Components;
 using GestaoSpaceEdu.Components.Account;
 using GestaoSpaceEdu.Data;
-using GestaoSpaceEdu.Data.Libraries.Mail;
 using GestaoSpaceEdu.Data.Repositories.Implementations;
 using GestaoSpaceEdu.Domain;
 using GestaoSpaceEdu.Domain.Enums;
 using GestaoSpaceEdu.Domain.Repositories.Interfaces;
+using GestaoSpaceEdu.Libraries.Mail;
+using GestaoSpaceEdu.Libraries.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -58,6 +59,7 @@ builder.Services.AddSingleton<SmtpClient>(options =>
     return smtp;
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
+builder.Services.AddSingleton<ICepService, CepService>();
 
 builder.Services.AddScoped<IAccountRepository,AccountRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();

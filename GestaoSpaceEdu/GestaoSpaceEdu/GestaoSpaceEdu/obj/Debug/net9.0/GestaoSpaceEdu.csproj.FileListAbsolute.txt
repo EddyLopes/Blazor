@@ -177,7 +177,6 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\s
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\scopedcss\bundle\GestaoSpaceEdu.styles.css
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\scopedcss\projectbundle\GestaoSpaceEdu.bundle.scp.css
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\f32kn295nz-gcvjxldlff.gz
-C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\1ij5b7nse6-khy4lop6wu.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\hm9nf2z17m-ty6q4bb5b0.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\k8ta3u6ziu-1o607l1t1y.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\i400u1yfvf-d7j7foshew.gz
@@ -3274,3 +3273,5 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\r
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\GestaoSpaceEdu.pdb
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\GestaoSpaceEdu.genruntimeconfig.cache
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\ref\GestaoSpaceEdu.dll
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\1ij5b7nse6-3xkn6xgeu4.gz
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\6pynv13riu-1z1mfz9ycc.gz

@@ -58,3 +58,7 @@ h1:focus {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+input[readonly], input[readonly]:focus {
+    background-color: rgb(239, 242, 247);
+}
