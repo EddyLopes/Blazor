@@ -7,16 +7,28 @@
       "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\pages\\company\\add.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{21B745DE-5350-4CDD-A865-2212F4895D6D}|GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu.client\\libraries\\helpers\\authenticationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21B745DE-5350-4CDD-A865-2212F4895D6D}|GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu.client\\libraries\\helpers\\authenticationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21B745DE-5350-4CDD-A865-2212F4895D6D}|GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu.client\\pages\\company\\list.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{21B745DE-5350-4CDD-A865-2212F4895D6D}|GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu.client\\pages\\company\\list.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC8B8EF6-E3CE-4499-85D5-7FFD80294997}|GestaoSpaceEdu.Domain\\GestaoSpaceEdu.Domain.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu.domain\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC8B8EF6-E3CE-4499-85D5-7FFD80294997}|GestaoSpaceEdu.Domain\\GestaoSpaceEdu.Domain.csproj|solutionrelative:gestaospaceedu.domain\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC8B8EF6-E3CE-4499-85D5-7FFD80294997}|GestaoSpaceEdu.Domain\\GestaoSpaceEdu.Domain.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu.domain\\libraries\\validations\\cnpjattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC8B8EF6-E3CE-4499-85D5-7FFD80294997}|GestaoSpaceEdu.Domain\\GestaoSpaceEdu.Domain.csproj|solutionrelative:gestaospaceedu.domain\\libraries\\validations\\cnpjattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\libraries\\services\\cepservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\libraries\\services\\cepservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21B745DE-5350-4CDD-A865-2212F4895D6D}|GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu.client\\pages\\company\\list.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{21B745DE-5350-4CDD-A865-2212F4895D6D}|GestaoSpaceEdu\\GestaoSpaceEdu.Client\\GestaoSpaceEdu.Client.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu.client\\pages\\company\\list.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,16 +42,17 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "List.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Pages\\Company\\List.razor",
               "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Pages\\Company\\List.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Pages\\Company\\List.razor",
               "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Pages\\Company\\List.razor",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-04T08:21:51.531Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -49,9 +62,23 @@
               "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Company\\Add.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Company\\Add.razor",
               "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Company\\Add.razor",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACwAAAB8AAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-04T08:26:57.733Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthenticationHelper.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Libraries\\Helpers\\AuthenticationHelper.cs",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Libraries\\Helpers\\AuthenticationHelper.cs",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Libraries\\Helpers\\AuthenticationHelper.cs",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu.Client\\Libraries\\Helpers\\AuthenticationHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T15:55:29.565Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -77,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CepService.cs",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Libraries\\Services\\CepService.cs",
               "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Libraries\\Services\\CepService.cs",
@@ -85,12 +112,11 @@
               "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Libraries\\Services\\CepService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T12:58:34.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-06T12:58:34.142Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "app.css",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\wwwroot\\app.css",
               "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\wwwroot\\app.css",
@@ -98,7 +124,32 @@
               "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\wwwroot\\app.css",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAEYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-07T11:08:01.34Z",
+              "WhenOpened": "2025-07-07T11:08:01.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Company.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu.Domain\\Company.cs",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu.Domain\\Company.cs",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu.Domain\\Company.cs",
+              "RelativeToolTip": "GestaoSpaceEdu.Domain\\Company.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T15:27:23.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CNPJAttribute.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu.Domain\\Libraries\\Validations\\CNPJAttribute.cs",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu.Domain\\Libraries\\Validations\\CNPJAttribute.cs",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu.Domain\\Libraries\\Validations\\CNPJAttribute.cs",
+              "RelativeToolTip": "GestaoSpaceEdu.Domain\\Libraries\\Validations\\CNPJAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T15:36:56.617Z",
               "EditorCaption": ""
             }
           ]

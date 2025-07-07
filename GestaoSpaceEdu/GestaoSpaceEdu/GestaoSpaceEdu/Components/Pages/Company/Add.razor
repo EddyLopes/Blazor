@@ -114,6 +114,9 @@
     [Inject]
     public ICepService CepService { get; set; } = null!;
 
+    [Inject]
+    public AuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
+
     public bool Loading { get; set; } = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -121,8 +124,11 @@
         await JS.InvokeVoidAsync("CompanyMaskInit");
     }
 
-    private void Submit()
+    private async Task Submit()
     {
+        Company.CreatedAt = DateTimeOffset.Now;
+        Company.UserId = (await AuthenticationHelper.GetAuthenticationUserIdAsync(AuthenticationStateProvider)).Value.ToString();
+
     }
 
     private async Task OnCepInput(ChangeEventArgs e)
