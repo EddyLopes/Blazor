@@ -41,7 +41,17 @@
                         <div class="col-xxl-3 col-md-6">
                             <div>
                                 <label for="cep" class="form-label">CEP</label>
-                                <InputText @bind-Value="Company.PostalCode" type="text" class="form-control" id="cep" autocomplete="off" />
+                                <div class="input-group">
+                                    <InputText @bind-Value="Company.PostalCode" type="text" class="@(Loading ? "form-control input-border-right-none" : "form-control")" id="cep" autocomplete="off" @oninput="OnCepInput" />
+                                    @if (Loading)
+                                    {
+                                        <span class="input-group-text input-group-text-bg-transparent">
+                                            <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                        </span>
+                                    }
+                                </div>
                                 <ValidationMessage For="() => Company.PostalCode" class="text-danger" />
                             </div>
                         </div>
@@ -104,10 +114,7 @@
     [Inject]
     public ICepService CepService { get; set; } = null!;
 
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-    }
+    public bool Loading { get; set; } = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -116,5 +123,31 @@
 
     private void Submit()
     {
+    }
+
+    private async Task OnCepInput(ChangeEventArgs e)
+    {
+        var cep = e.Value?.ToString();
+        if (!string.IsNullOrEmpty(cep) && cep.Length == 10)
+        {
+            Loading = true;
+            Company.State = string.Empty;
+            Company.City = string.Empty;
+            Company.Neighborhood = string.Empty;
+            Company.Address = string.Empty;
+
+            await Task.Delay(3000);
+            var address = await CepService.SearchByPostalCode(cep);
+
+            if (address is not null)
+            {
+                Company.State = address.UF;
+                Company.City = address.Localidade;
+                Company.Neighborhood = address.Bairro;
+                Company.Address = address.Logradouro;
+            }
+
+            Loading = false;
+        }
     }
 }

@@ -10,7 +10,6 @@ public class CepService : ICepService
         return await http.GetFromJsonAsync<LocalAddress>(url);
     }
 }
-
 public class LocalAddress
 {
     public string Cep { get; set; } = string.Empty;

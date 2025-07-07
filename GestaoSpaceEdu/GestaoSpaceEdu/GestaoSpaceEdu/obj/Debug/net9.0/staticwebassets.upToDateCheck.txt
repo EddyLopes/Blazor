@@ -1,4 +1,3 @@
-wwwroot\app.css
 wwwroot\assets\css\app-rtl.min.css
 wwwroot\assets\css\app-rtl.min.css.map
 wwwroot\assets\css\app.css
@@ -3759,6 +3758,7 @@ wwwroot\lib\bootstrap\dist\js\bootstrap.js
 wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\app.css
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\assets\libs\@tarekraafat\autocomplete.js\autoComplete.min.js
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\assets\css\app-rtl.min.css
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\assets\css\app-rtl.min.css.map
@@ -6799,6 +6799,7 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\assets\lib
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\assets\libs\wnumb\package.json
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\assets\libs\wnumb\README.md
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\assets\libs\wnumb\wNumb.min.js
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\js\app.js
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -6844,4 +6845,3 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\lib\bootst
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\app.css
-C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\wwwroot\js\app.js
