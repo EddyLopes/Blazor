@@ -3260,13 +3260,10 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\c
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\4od7vbmo62-h1s4sie4z3.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\bmz7exu7kl-63fj8s7r0e.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\mc83pbza1o-0j3bgjxly4.gz
-C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\rk9ei4ls1g-z9arwykn2k.gz
-C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\nrrxgtnfw9-z9arwykn2k.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.build.json
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.development.json
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\GestaoSp.5F0B4F4C.Up2Date
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\GestaoSpaceEdu.dll
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\refint\GestaoSpaceEdu.dll
@@ -3275,3 +3272,5 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\G
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\ref\GestaoSpaceEdu.dll
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\6pynv13riu-1z1mfz9ycc.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\1ij5b7nse6-95kme5bw69.gz
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\rk9ei4ls1g-fweoenxbug.gz
+C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\nrrxgtnfw9-fweoenxbug.gz

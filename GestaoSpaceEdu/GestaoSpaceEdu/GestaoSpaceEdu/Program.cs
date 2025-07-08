@@ -2,7 +2,7 @@ using GestaoSpaceEdu.Components;
 using GestaoSpaceEdu.Components.Account;
 using GestaoSpaceEdu.Data;
 using GestaoSpaceEdu.Data.Repositories.Implementations;
-using GestaoSpaceEdu.Domain;
+using GestaoSpaceEdu.Domain.Entities;
 using GestaoSpaceEdu.Domain.Enums;
 using GestaoSpaceEdu.Domain.Repositories.Interfaces;
 using GestaoSpaceEdu.Libraries.Mail;

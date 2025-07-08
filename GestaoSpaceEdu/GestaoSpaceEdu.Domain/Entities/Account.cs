@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GestaoSpaceEdu.Domain.Interfaces;
 
-namespace GestaoSpaceEdu.Domain;
+namespace GestaoSpaceEdu.Domain.Entities;
 
-public class Account
+public class Account : ISoftDelete
 {
     public int Id { get; set; }
     public string Description { get; set; } = string.Empty;
     public decimal Balance { get; set; }
     public DateTime BalanceDate { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset? DeletedAt { get; set; }
     public int? CompanyId { get; set; }
     public Company? Company { get; set; }
 }

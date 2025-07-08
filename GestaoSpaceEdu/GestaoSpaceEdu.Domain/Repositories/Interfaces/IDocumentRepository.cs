@@ -1,4 +1,6 @@
-﻿namespace GestaoSpaceEdu.Domain.Repositories.Interfaces
+﻿using GestaoSpaceEdu.Domain.Entities;
+
+namespace GestaoSpaceEdu.Domain.Repositories.Interfaces
 {
     public interface IDocumentRepository
     {

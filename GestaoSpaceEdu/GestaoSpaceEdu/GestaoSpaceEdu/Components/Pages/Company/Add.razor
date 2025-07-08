@@ -1,4 +1,5 @@
 ﻿@page "/company/add"
+@using GestaoSpaceEdu.Domain.Entities
 @rendermode InteractiveServer
 
 <PageTitle>
@@ -108,6 +109,8 @@
     [SupplyParameterFromForm]
     public Company Company { get; set; } = new();
 
+    public bool Loading { get; set; } = false;
+
     [Inject]
     public IJSRuntime JS { get; set; } = null!;
 
@@ -115,9 +118,13 @@
     public ICepService CepService { get; set; } = null!;
 
     [Inject]
+    public ICompanyRepository CompanyRepository { get; set; } = null!;
+
+    [Inject]
     public AuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
 
-    public bool Loading { get; set; } = false;
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = null!;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -128,6 +135,12 @@
     {
         Company.CreatedAt = DateTimeOffset.Now;
         Company.UserId = (await AuthenticationHelper.GetAuthenticationUserIdAsync(AuthenticationStateProvider)).Value.ToString();
+
+        await CompanyRepository.AddAsync(Company);
+
+        await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
+
+        NavigationManager.NavigateTo("/Company/List");
 
     }
 
@@ -142,7 +155,7 @@
             Company.Neighborhood = string.Empty;
             Company.Address = string.Empty;
 
-            await Task.Delay(3000);
+            //await Task.Delay(3000);
             var address = await CepService.SearchByPostalCode(cep);
 
             if (address is not null)

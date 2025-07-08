@@ -2,7 +2,7 @@ using System.Security.Claims;
 using System.Text.Json;
 using GestaoSpaceEdu.Components.Account.Pages;
 using GestaoSpaceEdu.Components.Account.Pages.Manage;
-using GestaoSpaceEdu.Domain;
+using GestaoSpaceEdu.Domain.Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Http.Extensions;

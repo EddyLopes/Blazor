@@ -1,4 +1,4 @@
-﻿using GestaoSpaceEdu.Domain;
+﻿using GestaoSpaceEdu.Domain.Entities;
 using GestaoSpaceEdu.Domain.Libraries.Utilities;
 using GestaoSpaceEdu.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -64,5 +64,4 @@ public class AccountRepository : IAccountRepository
             await _context.SaveChangesAsync();
         }
     }
-
 }

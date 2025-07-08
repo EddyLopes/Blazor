@@ -19,7 +19,39 @@ namespace GestaoSpaceEdu.Migrations
                 .HasAnnotation("ProductVersion", "9.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("GestaoSpaceEdu.Data.ApplicationUser", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Account", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("BalanceDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.ToTable("Accounts");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -30,6 +62,9 @@ namespace GestaoSpaceEdu.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -83,33 +118,7 @@ namespace GestaoSpaceEdu.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Account", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Balance")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("BalanceDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int?>("CompanyId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
-
-                    b.ToTable("Accounts");
-                });
-
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Category", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -117,6 +126,12 @@ namespace GestaoSpaceEdu.Migrations
 
                     b.Property<int?>("CompanyId")
                         .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -129,7 +144,7 @@ namespace GestaoSpaceEdu.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Company", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -150,6 +165,9 @@ namespace GestaoSpaceEdu.Migrations
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetime");
 
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetime");
+
                     b.Property<string>("LegalName")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -168,7 +186,7 @@ namespace GestaoSpaceEdu.Migrations
 
                     b.Property<string>("TaxId")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("TradeName")
                         .IsRequired()
@@ -180,16 +198,25 @@ namespace GestaoSpaceEdu.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TaxId")
+                        .IsUnique();
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Document", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Document", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetime");
 
                     b.Property<int?>("FinancialTransactionId")
                         .HasColumnType("int");
@@ -205,7 +232,7 @@ namespace GestaoSpaceEdu.Migrations
                     b.ToTable("Documents");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.FinancialTransaction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -227,6 +254,9 @@ namespace GestaoSpaceEdu.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
                         .HasColumnType("datetime");
 
                     b.Property<string>("Description")
@@ -401,27 +431,28 @@ namespace GestaoSpaceEdu.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Account", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Account", b =>
                 {
-                    b.HasOne("GestaoSpaceEdu.Domain.Company", "Company")
-                        .WithMany()
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.Company", "Company")
+                        .WithMany("Accounts")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Category", b =>
+                {
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.Company", "Company")
+                        .WithMany("Categories")
                         .HasForeignKey("CompanyId");
 
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Category", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Company", b =>
                 {
-                    b.HasOne("GestaoSpaceEdu.Domain.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId");
-
-                    b.Navigation("Company");
-                });
-
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Company", b =>
-                {
-                    b.HasOne("GestaoSpaceEdu.Data.ApplicationUser", "User")
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -430,27 +461,27 @@ namespace GestaoSpaceEdu.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.Document", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Document", b =>
                 {
-                    b.HasOne("GestaoSpaceEdu.Domain.FinancialTransaction", "FinancialTransaction")
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.FinancialTransaction", "FinancialTransaction")
                         .WithMany("Documents")
                         .HasForeignKey("FinancialTransactionId");
 
                     b.Navigation("FinancialTransaction");
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.FinancialTransaction", b =>
                 {
-                    b.HasOne("GestaoSpaceEdu.Domain.Account", "Account")
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.Account", "Account")
                         .WithMany()
                         .HasForeignKey("AccountId");
 
-                    b.HasOne("GestaoSpaceEdu.Domain.Category", "Category")
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId");
 
-                    b.HasOne("GestaoSpaceEdu.Domain.Company", "Company")
-                        .WithMany()
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.Company", "Company")
+                        .WithMany("FinancialTransactions")
                         .HasForeignKey("CompanyId");
 
                     b.Navigation("Account");
@@ -471,7 +502,7 @@ namespace GestaoSpaceEdu.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("GestaoSpaceEdu.Data.ApplicationUser", null)
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -480,7 +511,7 @@ namespace GestaoSpaceEdu.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("GestaoSpaceEdu.Data.ApplicationUser", null)
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -495,7 +526,7 @@ namespace GestaoSpaceEdu.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GestaoSpaceEdu.Data.ApplicationUser", null)
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -504,14 +535,23 @@ namespace GestaoSpaceEdu.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("GestaoSpaceEdu.Data.ApplicationUser", null)
+                    b.HasOne("GestaoSpaceEdu.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("GestaoSpaceEdu.Domain.FinancialTransaction", b =>
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.Company", b =>
+                {
+                    b.Navigation("Accounts");
+
+                    b.Navigation("Categories");
+
+                    b.Navigation("FinancialTransactions");
+                });
+
+            modelBuilder.Entity("GestaoSpaceEdu.Domain.Entities.FinancialTransaction", b =>
                 {
                     b.Navigation("Documents");
                 });

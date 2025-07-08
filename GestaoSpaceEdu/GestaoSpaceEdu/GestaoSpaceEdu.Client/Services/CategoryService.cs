@@ -1,4 +1,4 @@
-﻿using GestaoSpaceEdu.Domain;
+﻿using GestaoSpaceEdu.Domain.Entities;
 using GestaoSpaceEdu.Domain.Libraries.Utilities;
 using GestaoSpaceEdu.Domain.Repositories.Interfaces;
 using System.Net.Http.Json;

@@ -47,4 +47,3 @@ public class CNPJAttribute : ValidationAttribute
         return cnpj.EndsWith(digito);
     }
 }
-}

@@ -1,4 +1,4 @@
-﻿using GestaoSpaceEdu.Domain;
+﻿using GestaoSpaceEdu.Domain.Entities;
 using GestaoSpaceEdu.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 

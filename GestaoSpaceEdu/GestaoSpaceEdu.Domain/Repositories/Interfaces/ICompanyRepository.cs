@@ -1,4 +1,5 @@
-﻿using GestaoSpaceEdu.Domain.Libraries.Utilities;
+﻿using GestaoSpaceEdu.Domain.Entities;
+using GestaoSpaceEdu.Domain.Libraries.Utilities;
 
 namespace GestaoSpaceEdu.Domain.Repositories.Interfaces
 {
