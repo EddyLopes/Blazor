@@ -1,5 +1,4 @@
 ﻿@page "/Company/List"
-@using GestaoSpaceEdu.Domain.Entities
 @attribute [Authorize]
 @rendermode InteractiveAuto
 
@@ -89,8 +88,8 @@
     [Inject]
     public AuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
 
-    // [Inject]
-    // public ILocalStorageService LocalStorage { get; set; }
+    [Inject]
+    public ILocalStorageService LocalStorage { get; set; } = null!;
 
     protected override async Task OnInitializedAsync()
     {
@@ -118,8 +117,8 @@
 
     private async Task SelectCompany(Company company)
     {
-        // await LocalStorage.SetItemAsync(AppConstants.LocalStorageCompany, company);
+        await LocalStorage.SetItemAsync(AppConstants.LocalStorageCompany, company);
 
-        // Notification.NotificationOnSelected();
+        Notification.NotificationOnSelected();
     }
 }

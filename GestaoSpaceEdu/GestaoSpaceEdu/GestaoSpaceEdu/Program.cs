@@ -1,3 +1,5 @@
+using Blazored.LocalStorage;
+using GestaoSpaceEdu.Client.Libraries.Notifications;
 using GestaoSpaceEdu.Components;
 using GestaoSpaceEdu.Components.Account;
 using GestaoSpaceEdu.Data;
@@ -60,6 +62,9 @@ builder.Services.AddSingleton<SmtpClient>(options =>
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 builder.Services.AddSingleton<ICepService, CepService>();
+builder.Services.AddBlazoredLocalStorage();
+
+builder.Services.AddScoped<CompanyOnSelectedNotification>();
 
 builder.Services.AddScoped<IAccountRepository,AccountRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();

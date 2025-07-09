@@ -1,0 +1,18 @@
+﻿<div style="border: 1px solid black; padding: 10px;">
+    <h3>CounterChild</h3>
+    Quantidade atual: @State.Counter
+    <br />
+    <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+</div>
+
+
+@code {
+    [Inject]
+    public StateContainer State { get; set; } = null!;
+
+    private void IncrementCount()
+    {
+        State.Counter++;
+    }
+}
+

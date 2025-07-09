@@ -1,19 +1,49 @@
 ﻿@page "/counter"
 @rendermode InteractiveServer
+@using MyBlazorApp.Components.Pages.StateManagement
+@implements IDisposable
 
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+@* <p role="status">Current count: @currentCount</p> *@
+<p role="status">Current count: @State.Counter -> @NotificationText</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<CounterChild />
+@* <CounterChild_OLD Count="currentCount" IncrementParentEvent="IncrementCount" /> *@
+
 @code {
-    private int currentCount = 0;
+    //private int currentCount = 0;
+
+    public string? NotificationText { get; set; }
+
+    [Inject]
+    public StateContainer State { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        //base.OnInitialized();   
+        State.Notification += OnNotification;
+
+    }
 
     private void IncrementCount()
     {
-        currentCount++;
+        State.Counter++;
+        //currentCount++;
+    }
+
+    private void OnNotification()
+    {
+        NotificationText = "Notificado as " + DateTime.Now;
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        State.Notification -= OnNotification;
     }
 }

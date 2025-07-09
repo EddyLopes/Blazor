@@ -39,3 +39,6 @@ C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebasse
 C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.json
 C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.json
 C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.json
+C:\GitHub\Blazor\ExampleLibrary\FirstClassLibrary\obj\Debug\net8.0\staticwebassets.build.json

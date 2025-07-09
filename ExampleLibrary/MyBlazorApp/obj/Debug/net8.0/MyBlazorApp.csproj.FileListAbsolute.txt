@@ -46,3 +46,4 @@ C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\rjsmcshtml.dswa.cac
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\GitHub\Blazor\ExampleLibrary\MyBlazorApp\obj\Debug\net8.0\scopedcss\Components\Layout\Header.razor.rz.scp.css

@@ -108,6 +108,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSb3V0ZXJIdWIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/GitHub/Blazor/ExampleLibrary/MyBlazorApp/Components/Pages/StateManagement/CounterChild.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0ZU1hbmFnZW1lbnRcQ291bnRlckNoaWxkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/ExampleLibrary/MyBlazorApp/Components/Pages/StateManagement/CounterChild_OLD.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0ZU1hbmFnZW1lbnRcQ291bnRlckNoaWxkX09MRC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/GitHub/Blazor/ExampleLibrary/MyBlazorApp/Components/Pages/Test.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -123,6 +131,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/GitHub/Blazor/ExampleLibrary/MyBlazorApp/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/ExampleLibrary/MyBlazorApp/Components/Layout/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcSGVhZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xvqk63w6i2
 
 [C:/GitHub/Blazor/ExampleLibrary/MyBlazorApp/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
