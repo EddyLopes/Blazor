@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|solutionrelative:myblazorapp\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|c:\\github\\blazor\\examplelibrary\\myblazorapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|solutionrelative:myblazorapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|c:\\github\\blazor\\examplelibrary\\myblazorapp\\states\\statecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|solutionrelative:myblazorapp\\states\\statecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|c:\\github\\blazor\\examplelibrary\\myblazorapp\\components\\layout\\header.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|solutionrelative:myblazorapp\\components\\layout\\header.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|c:\\github\\blazor\\examplelibrary\\myblazorapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|solutionrelative:myblazorapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|c:\\github\\blazor\\examplelibrary\\myblazorapp\\components\\layout\\header.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{FC5BD118-77F9-4B1F-AD8D-A2FEB002CE0A}|MyBlazorApp\\MyBlazorApp.csproj|solutionrelative:myblazorapp\\components\\layout\\header.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,47 +30,19 @@
       "DocumentGroups": [
         {
           "DockedHeight": 340,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "StateContainer.cs",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\States\\StateContainer.cs",
               "RelativeDocumentMoniker": "MyBlazorApp\\States\\StateContainer.cs",
               "ToolTip": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\States\\StateContainer.cs",
               "RelativeToolTip": "MyBlazorApp\\States\\StateContainer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-09T08:48:42.876Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Header.razor",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\Header.razor",
-              "RelativeDocumentMoniker": "MyBlazorApp\\Components\\Layout\\Header.razor",
-              "ToolTip": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\Header.razor",
-              "RelativeToolTip": "MyBlazorApp\\Components\\Layout\\Header.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-09T08:53:30.634Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Header.razor.css",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\Header.razor.css",
-              "RelativeDocumentMoniker": "MyBlazorApp\\Components\\Layout\\Header.razor.css",
-              "ToolTip": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\Header.razor.css",
-              "RelativeToolTip": "MyBlazorApp\\Components\\Layout\\Header.razor.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-09T08:56:18.855Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -86,7 +54,7 @@
               "RelativeDocumentMoniker": "MyBlazorApp\\Components\\Pages\\Counter.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Pages\\Counter.razor",
               "RelativeToolTip": "MyBlazorApp\\Components\\Pages\\Counter.razor",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC4AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-09T08:36:43.347Z",
               "IsPinned": true,
@@ -94,15 +62,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CounterChild.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Pages\\StateManagement\\CounterChild.razor",
               "RelativeDocumentMoniker": "MyBlazorApp\\Components\\Pages\\StateManagement\\CounterChild.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Pages\\StateManagement\\CounterChild.razor",
               "RelativeToolTip": "MyBlazorApp\\Components\\Pages\\StateManagement\\CounterChild.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-09T09:04:01.946Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Header.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\Header.razor",
+              "RelativeDocumentMoniker": "MyBlazorApp\\Components\\Layout\\Header.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\Header.razor",
+              "RelativeToolTip": "MyBlazorApp\\Components\\Layout\\Header.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-09T08:53:30.634Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -128,13 +110,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "MyBlazorApp\\Components\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\ExampleLibrary\\MyBlazorApp\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "MyBlazorApp\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAABwAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-09T09:00:29.223Z",
               "EditorCaption": ""

@@ -1,20 +1,26 @@
 ﻿@using System.Net.Http
 @using System.Net.Http.Json
-@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.JSInterop
 @using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
-@using static Microsoft.AspNetCore.Components.Web.RenderMode
 @using Microsoft.AspNetCore.Components.Web.Virtualization
-@using Microsoft.JSInterop
-
-@using Blazored.LocalStorage
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
 
 @using GestaoSpaceEdu
-@using GestaoSpaceEdu.Client
 @using GestaoSpaceEdu.Components
-@using GestaoSpaceEdu.Domain
 @using GestaoSpaceEdu.Libraries.Services
-@using GestaoSpaceEdu.Client.Libraries.Helpers
+
+@using GestaoSpaceEdu.Domain
+@using GestaoSpaceEdu.Domain.Enums
+@using GestaoSpaceEdu.Domain.Entities
 @using GestaoSpaceEdu.Domain.Repositories.Interfaces
+
+@using GestaoSpaceEdu.Client
+@using GestaoSpaceEdu.Client.Libraries.Helpers
+@using GestaoSpaceEdu.Client.Libraries.Notifications
+@using GestaoSpaceEdu.Client.Libraries.Constants
+
+@using Blazored.LocalStorage

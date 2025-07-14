@@ -2,6 +2,7 @@
 @attribute [Authorize]
 @rendermode InteractiveAuto
 
+
 <PageTitle>
     Empresa - Lista
 </PageTitle>
@@ -91,6 +92,9 @@
     [Inject]
     public ILocalStorageService LocalStorage { get; set; } = null!;
 
+    [Inject]
+    public CompanyOnSelectedNotification Notification { get; set; } = null!;
+
     protected override async Task OnInitializedAsync()
     {
         PageSize = Configuration.GetValue<int>("Pagination:PageSize");
@@ -118,7 +122,6 @@
     private async Task SelectCompany(Company company)
     {
         await LocalStorage.SetItemAsync(AppConstants.LocalStorageCompany, company);
-
-        Notification.NotificationOnSelected();
+        Notification.OnSelectedNotification();
     }
 }

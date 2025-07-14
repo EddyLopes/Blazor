@@ -188,6 +188,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRGVmYXVsdFxEZWZhdWx0TGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Account/Add.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XEFkZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Account/Detail.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XERldGFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Account/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Category/Add.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeVxBZGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Category/Detail.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeVxEZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Category/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeVxFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Company/Add.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wYW55XEFkZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -202,6 +226,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Financial/Add.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcQWRkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Financial/Detail.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcRGV0YWlsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Financial/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcRWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Home.razor]

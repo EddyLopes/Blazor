@@ -44,12 +44,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVxMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu.Client/Pages/Financial/Pay/List.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmluYW5jaWFsXFBheVxMaXN0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu.Client/Pages/Financial/Receive/List.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmluYW5jaWFsXFJlY2VpdmVcTGlzdC5yYXpvcg==
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu.Client/Pages/Financial/List.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmluYW5jaWFsXExpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu.Client/RedirectToLogin.razor]

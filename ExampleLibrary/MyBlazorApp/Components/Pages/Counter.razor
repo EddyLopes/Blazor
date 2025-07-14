@@ -1,7 +1,8 @@
 ﻿@page "/counter"
 @rendermode InteractiveServer
-@using MyBlazorApp.Components.Pages.StateManagement
 @implements IDisposable
+
+@using MyBlazorApp.Components.Pages.StateManagement
 
 <PageTitle>Counter</PageTitle>
 
@@ -11,8 +12,9 @@
 <p role="status">Current count: @State.Counter -> @NotificationText</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-
-<CounterChild />
+<div class="mt-2">
+    <CounterChild />
+</div>
 @* <CounterChild_OLD Count="currentCount" IncrementParentEvent="IncrementCount" /> *@
 
 @code {
