@@ -3274,5 +3274,4 @@ C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\c
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\1ij5b7nse6-95kme5bw69.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\rk9ei4ls1g-fweoenxbug.gz
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\compressed\nrrxgtnfw9-fweoenxbug.gz
-C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\GitHub\Blazor\GestaoSpaceEdu\GestaoSpaceEdu\GestaoSpaceEdu\bin\Debug\net9.0\Blazored.LocalStorage.dll

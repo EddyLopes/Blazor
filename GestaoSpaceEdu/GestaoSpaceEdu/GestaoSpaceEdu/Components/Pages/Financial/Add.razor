@@ -14,6 +14,7 @@
             <div class="card-body">
                 <EditForm Model="FinancialTransaction" OnValidSubmit="Submit" FormName="formFinancialTransaction">
                     <DataAnnotationsValidator />
+                    <ValidationSummary class="text-danger" />
                     <div class="row">
                         <div class="col-xxl-3 col-md-6">
                             <div>
@@ -26,7 +27,7 @@
                             <div>
                                 <label for="category" class="form-label">Categoria</label>
                                 <InputSelect @bind-Value="FinancialTransaction.CategoryId" class="form-select" id="category">
-                                    <option value="">Selecione uma categoria</option>
+                                    <option value="0">--Selecione--</option>
                                     @if (_categories is not null)
                                     {
                                         foreach (var category in _categories)
@@ -42,7 +43,7 @@
                             <div>
                                 <label for="account" class="form-label">Conta</label>
                                 <InputSelect @bind-Value="FinancialTransaction.AccountId" class="form-control" id="account">
-                                    <option value="">Selecione uma categoria</option>
+                                    <option value="0">--Selecione--</option>
                                     @if (_accounts is not null)
                                     {
                                         foreach (var account in _accounts)
@@ -56,7 +57,7 @@
                         </div>
                         <div class="col-xxl-3 col-md-6">
                             <div>
-                                <label for="referenceDate" class="form-label">Data da Competência</label>
+                                <label for="referenceDate" class="form-label">Data Competência</label>
                                 <InputDate @bind-Value="FinancialTransaction.ReferenceDate" class="form-control" id="referenceDate" autocomplete="off" />
                                 <ValidationMessage For="() => FinancialTransaction.ReferenceDate" class="text-danger" />
                             </div>
@@ -80,14 +81,19 @@
                         <div class="col-xxl-3 col-md-6">
                             <div>
                                 <label for="repeat" class="form-label">Repetir</label>
-                                @* <InputNumber @bind-Value="FinancialTransaction.Repeat" class="form-control" id="repeat" autocomplete="off" /> *@
+                                <InputSelect @bind-Value="FinancialTransaction.Repeat" @bind-Value:after="RepeatChanged" class="form-control" id="repeat">
+                                    @foreach (Recurrence option in Enum.GetValues(typeof(Recurrence)))
+                                    {
+                                        <option value="@option">@option.GetDisplayName()</option>
+                                    }
+                                </InputSelect>
                                 <ValidationMessage For="() => FinancialTransaction.Repeat" class="text-danger" />
                             </div>
                         </div>
                         <div class="col-xxl-3 col-md-6">
                             <div>
                                 <label for="repeatTimes" class="form-label">Vezes</label>
-                                <InputNumber @bind-Value="FinancialTransaction.RepeatTimes" class="form-control" id="repeatTimes" autocomplete="off" />
+                                <InputNumber @bind-Value="FinancialTransaction.RepeatTimes" class="form-control" id="repeatTimes" autocomplete="off" disable="@_repeatTimesDisabled" />
                                 <ValidationMessage For="() => FinancialTransaction.RepeatTimes" class="text-danger" />
                             </div>
                         </div>
@@ -129,20 +135,35 @@
                                 <InputTextArea @bind-Value="FinancialTransaction.Observation" class="form-control" id="observation" autocomplete="off" />
                                 <ValidationMessage For="() => FinancialTransaction.Observation" class="text-danger" />
                             </div>
+                            @if (FinancialTransaction.Documents is not null && FinancialTransaction.Documents.Count > 0)
+                            {
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Opções</th>
+                                    </tr>
+                                    @foreach (var doc in FinancialTransaction.Documents)
+                                    {
+                                        <tr>
+                                            <td>@doc.Name</td>
+                                            <td><button class="btn btn-danger">Excluir</button></td>
+                                        </tr>
+                                    }
+                                </table>
+                            }
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div>
-                                <label for="observation" class="form-label">Anexar documentos</label>
-                                @*  <InputTextArea @bind-Value="FinancialTransaction.Observation" class="form-control" id="observation" autocomplete="off" />
-                                <ValidationMessage For="() => FinancialTransaction.Observation" class="text-danger" /> *@
+                                <label for="anexar" class="form-label">Anexar documentos</label>
+                                <InputFile class="form-control" id="anexar" OnChange="UploadFile" />
                             </div>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="d-flex justify-content-between">
-                            <a href="/Account/List" class="btn btn-light">Voltar</a>
+                            <a href="/Financial/@Type/List" class="btn btn-light">Voltar</a>
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </div>
                     </div>
@@ -157,12 +178,19 @@
     public string? Type { get; set; }
 
     [SupplyParameterFromForm]
-    public FinancialTransaction FinancialTransaction { get; set; } = new();
+    public FinancialTransaction FinancialTransaction { get; set; } = new() 
+    { 
+        ReferenceDate = DateTimeOffset.Now, 
+        DueDate = DateTimeOffset.Now,
+        Documents = []
+    };
 
     private Company? Company;
 
     private List<Category>? _categories;
     private List<Account>? _accounts;
+
+    private bool _repeatTimesDisabled = true;
 
     [Inject]
     public IJSRuntime JS { get; set; } = null!;
@@ -183,6 +211,9 @@
     [Inject]
     public NavigationManager NavigationManager { get; set; } = null!;
 
+    [Inject]
+    public IWebHostEnvironment WebHostEnvironment { get; set; } = null!;
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender)
@@ -196,13 +227,59 @@
 
     private async Task Submit()
     {
+        if (Enum.TryParse(Type, true, out TypeFinancialTransaction typeConverted))
+        {
+            FinancialTransaction.TypeFinancialTransaction = typeConverted;
+        }
+
         FinancialTransaction.CreatedAt = DateTimeOffset.Now;
         FinancialTransaction.CompanyId = Company!.Id;
         await FinancialTransactionRepository.AddAsync(FinancialTransaction);
 
         await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
 
-        NavigationManager.NavigateTo("/Financial/List");
-
+        NavigationManager.NavigateTo($"/Financial/{Type}/List");
     }
+
+    private void RepeatChanged()
+    {
+        if (FinancialTransaction.Repeat == Recurrence.None)
+        {
+            _repeatTimesDisabled = true;
+            FinancialTransaction.RepeatTimes = null;
+        }
+        else
+        {
+            _repeatTimesDisabled = false;
+        }
+    }
+    private async Task UploadFile(InputFileChangeEventArgs args)
+    {
+        var file = args.File;
+
+        if(file is not null)
+        {
+            var fileName = Path.GetFileNameWithoutExtension(file.Name) + "-" + Guid.NewGuid() + Path.GetExtension(file.Name);
+            var filePath = Path.Combine(WebHostEnvironment.WebRootPath, "uploads", fileName);
+
+            await using var fileStream = new FileStream(filePath, FileMode.Create);
+            await file.OpenReadStream().CopyToAsync(fileStream);
+
+            var doc = new Document();
+            doc.Path = fileName;
+            doc.Name = Path.GetFileName(file.Name);
+            doc.CreatedAt = DateTimeOffset.Now;
+
+            if (FinancialTransaction.Documents is not null)
+                FinancialTransaction.Documents.Add(doc);
+        }
+    }
+
+    // private void Uploaded(Document doc)
+    // {
+    //     if (FinancialTransaction.Documents is not null)
+    //     {
+    //         FinancialTransaction.Documents.Add(doc);
+    //     }
+    // }
 }
