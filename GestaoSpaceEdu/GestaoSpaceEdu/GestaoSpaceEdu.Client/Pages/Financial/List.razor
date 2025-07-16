@@ -2,13 +2,20 @@
 @attribute [Authorize]
 @rendermode InteractiveAuto
 
-<PageTitle>
-    Conta @Type - Lista
-</PageTitle>
+
+@if (Type is not null)
+{
+    <PageTitle>
+        Conta à @TypeFinancialTransactionToString.ConverterInfinitive(Type) - Lista
+    </PageTitle>
+}
 
 <div class="card">
     <div class="card-header align-items-center d-flex">
-        <h4 class="card-title mb-0 flex-grow-1">Contas à @Type</h4>
+        @if (Type is not null)
+        {
+            <h4 class="card-title mb-0 flex-grow-1">Contas à @TypeFinancialTransactionToString.ConverterInfinitive(Type)</h4>
+        }
         <div class="flex-shrink-0">
             <a href="/Financial/@Type/Add" class="btn btn-primary btn-sm material-shadow-none">
                 <i class="ri-file-list-3-line align-middle"></i> Cadastrar
@@ -104,7 +111,7 @@
         if (string.IsNullOrEmpty(Type))
             return;
 
-        if(Enum.TryParse(Type, true, out TypeFinancialTransaction typeConverted))
+        if (Enum.TryParse(Type, true, out TypeFinancialTransaction typeConverted))
         {
             TypeFinancial = typeConverted;
         }

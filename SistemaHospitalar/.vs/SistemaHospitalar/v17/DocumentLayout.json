@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\GitHub\\Blazor\\SistemaHospitalar\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|c:\\github\\blazor\\sistemahospitalar\\hospitalmanagementsystem\\hospitalmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|solutionrelative:hospitalmanagementsystem\\hospitalmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|c:\\github\\blazor\\sistemahospitalar\\hospitalmanagementsystem\\hospitalmanagementsystem\\services\\countryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|solutionrelative:hospitalmanagementsystem\\hospitalmanagementsystem\\services\\countryservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|c:\\github\\blazor\\sistemahospitalar\\hospitalmanagementsystem\\hospitalmanagementsystem\\components\\pages\\departaments\\departamentslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|solutionrelative:hospitalmanagementsystem\\hospitalmanagementsystem\\components\\pages\\departaments\\departamentslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|c:\\github\\blazor\\sistemahospitalar\\hospitalmanagementsystem\\hospitalmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|c:\\github\\blazor\\sistemahospitalar\\hospitalmanagementsystem\\hospitalmanagementsystem\\components\\pages\\departaments\\addnewdepartament.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|solutionrelative:hospitalmanagementsystem\\hospitalmanagementsystem\\components\\pages\\departaments\\addnewdepartament.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|c:\\github\\blazor\\sistemahospitalar\\hospitalmanagementsystem\\hospitalmanagementsystem\\components\\pages\\departaments\\departamentslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C9887CA2-CBD8-4F3A-995F-2A64348DACD9}|HospitalManagementSystem\\HospitalManagementSystem\\HospitalManagementSystem.csproj|solutionrelative:hospitalmanagementsystem\\hospitalmanagementsystem\\components\\pages\\departaments\\departamentslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,19 +46,15 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "DepartamentsList.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\SistemaHospitalar\\HospitalManagementSystem\\HospitalManagementSystem\\Components\\Pages\\Departaments\\DepartamentsList.razor",
               "RelativeDocumentMoniker": "HospitalManagementSystem\\HospitalManagementSystem\\Components\\Pages\\Departaments\\DepartamentsList.razor",
@@ -66,11 +62,12 @@
               "RelativeToolTip": "HospitalManagementSystem\\HospitalManagementSystem\\Components\\Pages\\Departaments\\DepartamentsList.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T10:23:55.381Z"
+              "WhenOpened": "2025-06-21T10:23:55.381Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AddNewDepartament.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\SistemaHospitalar\\HospitalManagementSystem\\HospitalManagementSystem\\Components\\Pages\\Departaments\\AddNewDepartament.razor",
               "RelativeDocumentMoniker": "HospitalManagementSystem\\HospitalManagementSystem\\Components\\Pages\\Departaments\\AddNewDepartament.razor",
@@ -82,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\SistemaHospitalar\\HospitalManagementSystem\\HospitalManagementSystem\\appsettings.json",
               "RelativeDocumentMoniker": "HospitalManagementSystem\\HospitalManagementSystem\\appsettings.json",
@@ -90,20 +87,19 @@
               "RelativeToolTip": "HospitalManagementSystem\\HospitalManagementSystem\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-23T11:32:38.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T11:32:38.542Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\SistemaHospitalar\\HospitalManagementSystem\\HospitalManagementSystem\\Program.cs",
-              "RelativeDocumentMoniker": "HospitalManagementSystem\\HospitalManagementSystem\\Program.cs",
-              "ToolTip": "C:\\GitHub\\Blazor\\SistemaHospitalar\\HospitalManagementSystem\\HospitalManagementSystem\\Program.cs",
-              "RelativeToolTip": "HospitalManagementSystem\\HospitalManagementSystem\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CountryServices.cs",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\SistemaHospitalar\\HospitalManagementSystem\\HospitalManagementSystem\\Services\\CountryServices.cs",
+              "RelativeDocumentMoniker": "HospitalManagementSystem\\HospitalManagementSystem\\Services\\CountryServices.cs",
+              "ToolTip": "C:\\GitHub\\Blazor\\SistemaHospitalar\\HospitalManagementSystem\\HospitalManagementSystem\\Services\\CountryServices.cs",
+              "RelativeToolTip": "HospitalManagementSystem\\HospitalManagementSystem\\Services\\CountryServices.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwDgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T10:36:55.629Z",
+              "WhenOpened": "2025-07-15T14:11:41.479Z",
               "EditorCaption": ""
             }
           ]

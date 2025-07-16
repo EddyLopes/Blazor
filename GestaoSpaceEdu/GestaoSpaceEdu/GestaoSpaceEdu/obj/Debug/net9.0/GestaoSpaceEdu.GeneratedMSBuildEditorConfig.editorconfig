@@ -232,6 +232,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcQWRkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Financial/Components/FinancialTransactionForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcQ29tcG9uZW50c1xGaW5hbmNpYWxUcmFuc2FjdGlvbkZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Financial/Components/UploadFileForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcQ29tcG9uZW50c1xVcGxvYWRGaWxlRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/GitHub/Blazor/GestaoSpaceEdu/GestaoSpaceEdu/GestaoSpaceEdu/Components/Pages/Financial/Detail.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcRGV0YWlsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

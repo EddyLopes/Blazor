@@ -221,6 +221,10 @@ namespace GestaoSpaceEdu.Migrations
                     b.Property<int?>("FinancialTransactionId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Path")
                         .IsRequired()
                         .HasColumnType("longtext");
