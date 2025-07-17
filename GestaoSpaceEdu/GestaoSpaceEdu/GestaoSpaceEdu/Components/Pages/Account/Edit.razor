@@ -39,7 +39,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="d-flex justify-content-between">
-                            <a href="/Account/List" class="btn btn-light">Voltar</a>
+                            <a href="/Account/List" class="btn btn-light" @onclick="BackRollback">Voltar</a>
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </div>
                     </div>
@@ -48,7 +48,6 @@
         </div>
     </div>
 </div>
-
 
 @code {
     [SupplyParameterFromForm]
@@ -66,10 +65,12 @@
     [Inject]
     public ILocalStorageService LocalStorage { get; set; } = null!;
 
-
     [Inject]
     public NavigationManager NavigationManager { get; set; } = null!;
-
+    
+    [Inject]
+    private ApplicationDbContext _dbContext { get; set; } = null!;
+    
     protected override async Task OnParametersSetAsync()
     {
         var account = await AccountRepository.GetAsync(Id);
@@ -104,6 +105,11 @@
         await AccountRepository.UpdateAsync(Account);
         await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
         NavigationManager.NavigateTo("/Account/List");
+    }
+
+    private void BackRollback()
+    {
+        _dbContext.ChangeTracker.Clear();
     }
 }
 

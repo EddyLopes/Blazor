@@ -54,6 +54,11 @@
 
     private async Task Save(FinancialTransaction financialTransaction)
     {
+        if (financialTransaction.Repeat != Recurrence.None)
+        {
+
+        }
+
         await FinancialTransactionRepository.UpdateAsync(financialTransaction);
         await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
         NavigationManager.NavigateTo($"/Financial/{Type}/List");

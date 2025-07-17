@@ -35,6 +35,8 @@ public class FinancialTransactionRepository : IFinancialTransactionRepository
     public async Task<FinancialTransaction?> GetAsync(int id)
     {
         return await _context.FinancialTransactions
+                             .Include(x => x.Category)
+                             .Include(x => x.Account)
                              .Include(x => x.Documents)
                              .SingleOrDefaultAsync(x => x.Id == id);
     }

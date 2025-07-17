@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GestaoSpaceEdu.Client",
   "resources": {
-    "hash": "sha256-rSCxytsiaikwSLaJKMB5eRPj7/nzvTWHzod8izpe1gk=",
+    "hash": "sha256-NERxexQfjgXHc8zuvws8Jvw/SEJOKHw08nLGGFhfX0Y=",
     "fingerprinting": {
       "Blazored.LocalStorage.12n6dz54qr.wasm": "Blazored.LocalStorage.wasm",
       "Microsoft.AspNetCore.Authorization.phaa9r44xv.wasm": "Microsoft.AspNetCore.Authorization.wasm",
@@ -209,10 +209,10 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "GestaoSpaceEdu.Domain.ojsi4uje3u.wasm": "GestaoSpaceEdu.Domain.wasm",
-      "GestaoSpaceEdu.Domain.fvcqnaq6gc.pdb": "GestaoSpaceEdu.Domain.pdb",
-      "GestaoSpaceEdu.Client.uo8xbw86hq.wasm": "GestaoSpaceEdu.Client.wasm",
-      "GestaoSpaceEdu.Client.yxrgof9rak.pdb": "GestaoSpaceEdu.Client.pdb"
+      "GestaoSpaceEdu.Domain.wkjlyr6zcp.wasm": "GestaoSpaceEdu.Domain.wasm",
+      "GestaoSpaceEdu.Domain.ybjwkjiz9d.pdb": "GestaoSpaceEdu.Domain.pdb",
+      "GestaoSpaceEdu.Client.4zfc54d715.wasm": "GestaoSpaceEdu.Client.wasm",
+      "GestaoSpaceEdu.Client.7vtuk9zdbh.pdb": "GestaoSpaceEdu.Client.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.st0ovrfdhi.js": "sha256-MBW/zayfv+YU6mhH7y4b8NNU4D1EYd7nf9gYrFshnnY="
@@ -430,12 +430,12 @@
       "WindowsBase.u25hol0de4.wasm": "sha256-CgB28KCiYKHd4yK6IM0PJ526P7IbRCpNkGTqn+cLwxs=",
       "mscorlib.brg9pkj3je.wasm": "sha256-FzZwzxUYYyg3qxc7Km8r50UKAmRWrIeckSFG1NTHKNU=",
       "netstandard.wuzd3f1y6v.wasm": "sha256-yAXc0deBIRkWTVXqADZfhgZtrxGgJCIbZYVtA0NjvdM=",
-      "GestaoSpaceEdu.Domain.ojsi4uje3u.wasm": "sha256-/DJ8k9vXiqT5uPVSAX/VL23TKMFCmPeX3GQY1T3zidM=",
-      "GestaoSpaceEdu.Client.uo8xbw86hq.wasm": "sha256-wuqCyGU8FBCiz/NRvSUjmFgst39BNy/dXLaotF51xi0="
+      "GestaoSpaceEdu.Domain.wkjlyr6zcp.wasm": "sha256-oNuMcEAL8ICAlzfRarsftOUIjiwyhoLuUaxK+acBe9o=",
+      "GestaoSpaceEdu.Client.4zfc54d715.wasm": "sha256-IN+PS3xgOg3x8LBfkwnfIrV/EDhDxYgMRjJ8DreVTpU="
     },
     "pdb": {
-      "GestaoSpaceEdu.Domain.fvcqnaq6gc.pdb": "sha256-VT3IPI0hokPj3z7T9wbunmanjfmFHK1YzIxPXEC9ayY=",
-      "GestaoSpaceEdu.Client.yxrgof9rak.pdb": "sha256-igrLvFBXOY6LJ3GluDO9rgUL5tpszcTY66woSAsVryM="
+      "GestaoSpaceEdu.Domain.ybjwkjiz9d.pdb": "sha256-3slgog8ABN54vCc/PNnErtIOYjIa1OwehrLZYES8ArM=",
+      "GestaoSpaceEdu.Client.7vtuk9zdbh.pdb": "sha256-TUWif5Jk8lmMrIJMaas7fRq8y8AnJajAxWI3v0eKjME="
     }
   },
   "cacheBootResources": true,

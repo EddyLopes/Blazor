@@ -289,6 +289,9 @@ namespace GestaoSpaceEdu.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int?>("RepeatGroup")
+                        .HasColumnType("int");
+
                     b.Property<int?>("RepeatTimes")
                         .HasColumnType("int");
 

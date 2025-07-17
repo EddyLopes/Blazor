@@ -34,19 +34,30 @@
 
     [Inject]
     public IFinancialTransactionRepository FinancialTransactionRepository { get; set; } = null!;
-    
+
     [Inject]
     public NavigationManager NavigationManager { get; set; } = null!;
+
+    [Inject]
+    public IQueue _queue { get; set; } = null!;
     #endregion
 
     private async Task Save(FinancialTransaction financialTransaction)
     {
         financialTransaction.CreatedAt = DateTimeOffset.Now;
-        
         await FinancialTransactionRepository.AddAsync(financialTransaction);
 
-        await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
+        if (financialTransaction.Repeat != Recurrence.None)
+        {
+            _queue.QueueInvocableWithPayload<FinancialTransactionRepeatInvocable, FinancialTransaction>(financialTransaction);
+            await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso! As parcelas serão criadas em alguns minutos!");
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
+        }
 
+        
         NavigationManager.NavigateTo($"/Financial/{Type}/List");
     }
 }

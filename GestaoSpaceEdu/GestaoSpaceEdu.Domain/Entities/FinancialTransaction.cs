@@ -26,6 +26,7 @@ public class FinancialTransaction : ISoftDelete
     [RequiredIfAmoundPaidFilled]
     public decimal? Amount { get; set; }
 
+    public int? RepeatGroup { get; set; }
     public Recurrence Repeat { get; set; }
 
     [RequiredRepeatTimes]

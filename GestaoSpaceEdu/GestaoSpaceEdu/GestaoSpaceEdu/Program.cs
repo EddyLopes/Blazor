@@ -1,4 +1,5 @@
 using Blazored.LocalStorage;
+using Coravel;
 using GestaoSpaceEdu.Client.Libraries.Notifications;
 using GestaoSpaceEdu.Components;
 using GestaoSpaceEdu.Components.Account;
@@ -8,6 +9,7 @@ using GestaoSpaceEdu.Domain.Entities;
 using GestaoSpaceEdu.Domain.Enums;
 using GestaoSpaceEdu.Domain.Repositories.Interfaces;
 using GestaoSpaceEdu.Libraries.Mail;
+using GestaoSpaceEdu.Libraries.Queues;
 using GestaoSpaceEdu.Libraries.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -63,8 +65,10 @@ builder.Services.AddSingleton<SmtpClient>(options =>
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 builder.Services.AddSingleton<ICepService, CepService>();
 builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddQueue();
 
 builder.Services.AddScoped<CompanyOnSelectedNotification>();
+builder.Services.AddScoped<FinancialTransactionRepeatInvocable>();
 
 builder.Services.AddScoped<IAccountRepository,AccountRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();

@@ -25,7 +25,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="d-flex justify-content-between">
-                            <a href="/Category/List" class="btn btn-light">Voltar</a>
+                            <a href="/Category/List" class="btn btn-light" @onclick="BackRollback">Voltar</a>
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </div>
                     </div>
@@ -55,6 +55,9 @@
 
     [Inject]
     public NavigationManager NavigationManager { get; set; } = null!;
+
+    [Inject]
+    private ApplicationDbContext _dbContext { get; set; } = null!;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -90,6 +93,11 @@
         await CategoryRepository.UpdateAsync(Category);
         await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
         NavigationManager.NavigateTo("/Category/List");
+    }
+
+    private void BackRollback()
+    {
+        _dbContext.ChangeTracker.Clear();
     }
 }
 
