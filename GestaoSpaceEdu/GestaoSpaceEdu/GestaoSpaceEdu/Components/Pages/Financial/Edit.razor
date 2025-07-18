@@ -45,6 +45,9 @@
 
     [Inject]
     public NavigationManager NavigationManager { get; set; } = null!;
+
+    [Inject]
+    public IQueue _queue { get; set; } = null!;
     #endregion
 
     protected override async Task OnParametersSetAsync()
@@ -54,12 +57,8 @@
 
     private async Task Save(FinancialTransaction financialTransaction)
     {
-        if (financialTransaction.Repeat != Recurrence.None)
-        {
-
-        }
-
         await FinancialTransactionRepository.UpdateAsync(financialTransaction);
+        _queue.QueueInvocableWithPayload<FinancialTransactionRepeatInvocable, FinancialTransaction>(financialTransaction);
         await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
         NavigationManager.NavigateTo($"/Financial/{Type}/List");
     }

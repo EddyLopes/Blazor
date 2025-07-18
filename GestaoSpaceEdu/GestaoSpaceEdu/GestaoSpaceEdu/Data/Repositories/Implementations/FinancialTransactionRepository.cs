@@ -56,11 +56,30 @@ public class FinancialTransactionRepository : IFinancialTransactionRepository
     public async Task DeleteAsync(int id)
     {
         var financialTransaction = await GetAsync(id);
+        await DeleteAsync(financialTransaction!);
+    }
 
+    public async Task DeleteAsync(FinancialTransaction financialTransaction)
+    {
         if (financialTransaction is not null)
         {
             _context.Remove(financialTransaction);
             await _context.SaveChangesAsync();
         }
+    }
+
+    public async Task<int> GetCountTransactionsSameGroupAsync(int id)
+    {
+        return await _context.FinancialTransactions
+                             .Where(x => x.RepeatGroup == id)
+                             .CountAsync();
+    }
+
+    public async Task<List<FinancialTransaction>> GetTransactionsSameGroupAsync(int id)
+    {
+        return await _context.FinancialTransactions
+                     .Where(x => x.RepeatGroup == id)
+                     .OrderBy(x => x.Id)
+                     .ToListAsync();
     }
 }
