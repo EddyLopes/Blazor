@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\libraries\\queues\\financialtransactionrepeatinvocable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\libraries\\queues\\financialtransactionrepeatinvocable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\data\\repositories\\implementations\\financialtransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\data\\repositories\\implementations\\financialtransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\components\\financialtransactionform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\components\\financialtransactionform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\edit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\add.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\add.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\pages\\account\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\pages\\account\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|c:\\github\\blazor\\gestaospaceedu\\gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E15E22BE-93E8-415A-917F-581CCBDDEA49}|GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu.csproj|solutionrelative:gestaospaceedu\\gestaospaceedu\\components\\pages\\financial\\detail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,36 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 195,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FinancialTransactionRepeatInvocable.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Libraries\\Queues\\FinancialTransactionRepeatInvocable.cs",
-              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Libraries\\Queues\\FinancialTransactionRepeatInvocable.cs",
-              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Libraries\\Queues\\FinancialTransactionRepeatInvocable.cs",
-              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Libraries\\Queues\\FinancialTransactionRepeatInvocable.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAswB8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T11:15:17.45Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FinancialTransactionRepository.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Data\\Repositories\\Implementations\\FinancialTransactionRepository.cs",
-              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Data\\Repositories\\Implementations\\FinancialTransactionRepository.cs",
-              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Data\\Repositories\\Implementations\\FinancialTransactionRepository.cs",
-              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Data\\Repositories\\Implementations\\FinancialTransactionRepository.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwDoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T08:59:24.536Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -94,75 +54,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Add.razor",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Add.razor",
-              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Add.razor",
-              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Add.razor",
-              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Add.razor",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Detail.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Detail.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Detail.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Detail.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Detail.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-17T09:33:43.143Z",
+              "WhenOpened": "2025-07-21T18:30:56.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Edit.razor",
               "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Edit.razor",
               "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Edit.razor",
               "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Edit.razor",
               "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Edit.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-17T09:35:32.287Z",
+              "WhenOpened": "2025-07-21T18:31:00.12Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Program.cs",
-              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Program.cs",
-              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Program.cs",
-              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T11:21:29.162Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "fa1e26fa-843e-4c5b-870f-11a62dfeb777",
-        "Display": 1,
-        "X": 18,
-        "Y": 114,
-        "Width": 1522,
-        "Height": 694,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Detail.razor",
-              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Account\\Detail.razor",
-              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Account\\Detail.razor",
-              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Account\\Detail.razor",
-              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Account\\Detail.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAeAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FinancialTransactionForm.razor",
+              "DocumentMoniker": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Components\\FinancialTransactionForm.razor",
+              "RelativeDocumentMoniker": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Components\\FinancialTransactionForm.razor",
+              "ToolTip": "C:\\GitHub\\Blazor\\GestaoSpaceEdu\\GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Components\\FinancialTransactionForm.razor",
+              "RelativeToolTip": "GestaoSpaceEdu\\GestaoSpaceEdu\\Components\\Pages\\Financial\\Components\\FinancialTransactionForm.razor",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAAAPEAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-11T10:29:36.585Z",
+              "WhenOpened": "2025-07-21T18:31:08.361Z",
               "EditorCaption": ""
             }
           ]

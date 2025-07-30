@@ -52,7 +52,7 @@ public class FinancialTransactionRepeatInvocable : IInvocable, IInvocableWithPay
 
             for (int i = 2; i <= countTransactionsSameGroup; i++)
             {
-                await _repository.DeleteAsync(transactions.ElementAt(i));
+                await _repository.DeleteAsync(transactions.ElementAt(i-1));
             }
         }
     }
@@ -65,7 +65,7 @@ public class FinancialTransactionRepeatInvocable : IInvocable, IInvocableWithPay
 
             for (int i = countTransactionsSameGroup; i > Payload.RepeatTimes; i--)
             {
-                await _repository.DeleteAsync(transactions.ElementAt(i));
+                await _repository.DeleteAsync(transactions.ElementAt(i-1));
             }
         }
     }
