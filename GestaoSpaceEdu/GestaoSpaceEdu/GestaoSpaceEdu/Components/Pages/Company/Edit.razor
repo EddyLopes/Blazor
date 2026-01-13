@@ -1,0 +1,200 @@
+﻿@page "/company/edit/{id:int}"
+@using GestaoSpaceEdu.Domain.Entities
+@rendermode InteractiveServer
+
+<PageTitle>
+    Empresa - Atualizar
+</PageTitle>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-4 flex-grow-1">Atualizar Empresa</h4>
+            </div>
+            <div class="card-body">
+                <EditForm Model="Company" OnValidSubmit="Submit" FormName="formUpdateCompany">
+                    <DataAnnotationsValidator />
+                    <div class="row">
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="razaoSocial" class="form-label">Razão Social</label>
+                                <InputText @bind-Value="Company.LegalName" type="text" class="form-control" id="razaoSocial" autocomplete="off" />
+                                <ValidationMessage For="() => Company.LegalName" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="nomeFantasia" class="form-label">Nome Fantasia</label>
+                                <InputText @bind-Value="Company.TradeName" type="text" class="form-control" id="nomeFantasia" autocomplete="off" />
+                                <ValidationMessage For="() => Company.TradeName" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="cnpj" class="form-label">CNPJ</label>
+                                <InputText @bind-Value="Company.TaxId" type="text" class="form-control" id="cnpj" autocomplete="off" />
+                                <ValidationMessage For="() => Company.TaxId" class="text-danger" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="cep" class="form-label">CEP</label>
+                                <div class="input-group">
+                                    <InputText @bind-Value="Company.PostalCode" type="text" class="@(Loading ? "form-control input-border-right-none" : "form-control")" id="cep" autocomplete="off" @oninput="OnCepInput" />
+                                    @if (Loading)
+                                    {
+                                        <span class="input-group-text input-group-text-bg-transparent">
+                                            <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                        </span>
+                                    }
+                                </div>
+                                <ValidationMessage For="() => Company.PostalCode" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="estado" class="form-label">Estado</label>
+                                <InputText @bind-Value="Company.State" type="text" class="form-control" id="estado" readonly />
+                                <ValidationMessage For="() => Company.State" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="cidade" class="form-label">Cidade</label>
+                                <InputText @bind-Value="Company.City" type="text" class="form-control" id="cidade" readonly />
+                                <ValidationMessage For="() => Company.City" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="bairro" class="form-label">Bairro</label>
+                                <InputText @bind-Value="Company.Neighborhood" type="text" class="form-control" id="bairro" readonly />
+                                <ValidationMessage For="() => Company.Neighborhood" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-md-6">
+                            <div>
+                                <label for="endereco" class="form-label">Endereço</label>
+                                <InputText @bind-Value="Company.Address" type="text" class="form-control" id="endereco" autocomplete="off" />
+                                <ValidationMessage For="() => Company.Address" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6">
+                            <div>
+                                <label for="complemento" class="form-label">Complemento</label>
+                                <InputText @bind-Value="Company.Complement" type="text" class="form-control" id="complemento" autocomplete="off" />
+                                <ValidationMessage For="() => Company.Complement" class="text-danger" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="d-flex justify-content-between">
+                                <a href="/Company/List" class="btn btn-light" @onclick="BackRollback">Voltar</a>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [SupplyParameterFromForm]
+    public Company Company { get; set; } = new();
+
+    [Parameter]
+    public int Id { get; set; }
+
+    public bool Loading { get; set; } = false;
+
+    [Inject]
+    public IJSRuntime JS { get; set; } = null!;
+
+    [Inject]
+    public ICepService CepService { get; set; } = null!;
+
+    [Inject]
+    public ICompanyRepository CompanyRepository { get; set; } = null!;
+
+    [Inject]
+    public AuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = null!;
+    
+    [Inject]
+    private ApplicationDbContext _dbContext { get; set; } = null!;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JS.InvokeVoidAsync("CompanyMaskInit");
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var userId = (await AuthenticationHelper.GetAuthenticationUserIdAsync(AuthenticationStateProvider)).Value;
+        var company = await CompanyRepository.GetAsync(Id);
+
+        if(company is null)
+        {
+            await JS.InvokeVoidAsync("alert", "Empresa não encontrada!");
+            NavigationManager.NavigateTo("/Company/List");
+            return;
+        }
+
+        if (company.UserId != userId.ToString())
+        {
+            await JS.InvokeVoidAsync("alert", "Você não tem permissão para editar esta empresa!");
+            NavigationManager.NavigateTo("/Company/List");
+            return;
+        }
+
+        Company = company;
+    }
+
+    private async Task Submit()
+    {
+        await CompanyRepository.UpdateAsync(Company);
+        await JS.InvokeVoidAsync("alert", "Registro salvo com sucesso!");
+        NavigationManager.NavigateTo("/Company/List");
+    }
+
+    private async Task OnCepInput(ChangeEventArgs e)
+    {
+        var cep = e.Value?.ToString();
+        if (!string.IsNullOrEmpty(cep) && cep.Length == 10)
+        {
+            Loading = true;
+            Company.State = string.Empty;
+            Company.City = string.Empty;
+            Company.Neighborhood = string.Empty;
+            Company.Address = string.Empty;
+
+            //await Task.Delay(3000);
+            var address = await CepService.SearchByPostalCode(cep);
+
+            if (address is not null)
+            {
+                Company.State = address.UF;
+                Company.City = address.Localidade;
+                Company.Neighborhood = address.Bairro;
+                Company.Address = address.Logradouro;
+            }
+
+            Loading = false;
+        }
+    }
+
+    private void BackRollback()
+    {
+        _dbContext.ChangeTracker.Clear();
+    }
+}
+

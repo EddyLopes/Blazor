@@ -1,0 +1,114 @@
+﻿@page "/clientes"
+@rendermode InteractiveServer
+
+<h3>Gestão de Clientes</h3>
+
+@if (isEditFormVisible)
+{
+    <ClienteForm Cliente="@selectedCliente" OnValidSubmit="SaveCliente" OnCancel="CloseEditForm" />
+}
+else
+{
+    <DynamicTable TItem="Cliente" Items="@clientes" OnAdd="@ShowAddClienteForm" OnEdit="@ShowEditClienteForm" OnDelete="@ConfirmDeleteCliente" />
+}
+
+@if (isDeleteConfirmVisible)
+{
+    <div class="modal fade show" tabindex="-1" style="display: block;" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Exclusão</h5>
+                    <button type="button" class="close" @onclick="CloseDeleteConfirm">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza de que deseja excluir o cliente @clienteToDelete?.Nome?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" @onclick="CloseDeleteConfirm">Cancelar</button>
+                    <button class="btn btn-danger" @onclick="DeleteClienteConfirmed">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    private List<Cliente> clientes = new List<Cliente>
+    {
+        new Cliente { ClienteId = 1, Nome = "João da Silva", Email = "joao@email.com", Telefone = "123456789" },
+        new Cliente { ClienteId = 2, Nome = "Maria Oliveira", Email = "maria@email.com", Telefone = "987654321" }
+    };
+
+    private Cliente selectedCliente = new Cliente();
+    private Cliente? clienteToDelete;  // Armazena o cliente que está sendo considerado para exclusão
+    private bool isEditFormVisible = false;
+    private bool isDeleteConfirmVisible = false;
+
+    private void ShowAddClienteForm()
+    {
+        selectedCliente = new Cliente(); // Novo cliente
+        isEditFormVisible = true;
+    }
+
+    private void ShowEditClienteForm(Cliente cliente)
+    {
+        selectedCliente = new Cliente // Criamos uma nova instância para evitar problemas de referência
+            {
+                ClienteId = cliente.ClienteId,
+                Nome = cliente.Nome,
+                Email = cliente.Email,
+                Telefone = cliente.Telefone
+            };
+        isEditFormVisible = true;
+    }
+
+    private void SaveCliente(Cliente cliente)
+    {
+        if (cliente.ClienteId == 0) // Adiciona um novo cliente
+        {
+            cliente.ClienteId = clientes.Max(c => c.ClienteId) + 1; // Define um novo ID
+            clientes.Add(cliente);
+        }
+        else // Edita um cliente existente
+        {
+            var existingCliente = clientes.FirstOrDefault(c => c.ClienteId == cliente.ClienteId);
+            if (existingCliente != null)
+            {
+                existingCliente.Nome = cliente.Nome;
+                existingCliente.Email = cliente.Email;
+                existingCliente.Telefone = cliente.Telefone;
+            }
+        }
+
+        CloseEditForm();
+    }
+
+    private void ConfirmDeleteCliente(Cliente cliente)
+    {
+        clienteToDelete = cliente;  // Define o cliente para exclusão
+        isDeleteConfirmVisible = true;
+    }
+
+    private void DeleteClienteConfirmed()
+    {
+        if (clienteToDelete != null)
+        {
+            clientes.Remove(clienteToDelete);
+        }
+        isDeleteConfirmVisible = false;
+        clienteToDelete = null;  // Limpa a referência após a confirmação
+    }
+
+    private void CloseEditForm()
+    {
+        isEditFormVisible = false;
+    }
+
+    private void CloseDeleteConfirm()
+    {
+        isDeleteConfirmVisible = false;
+        clienteToDelete = null;  // Limpa a referência ao cancelar
+    }
+}

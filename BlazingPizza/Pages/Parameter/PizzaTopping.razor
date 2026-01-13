@@ -1,0 +1,10 @@
+﻿@page "/pizzas-toppings"
+@using BlazingPizza.Model
+
+<h1>Our Latest Pizzas and Topping</h1>
+
+<NewPizza PizzaName="Hawaiian" PizzaDescription="The one with pineapple" />
+
+<NewPizzaTopping Topping="@(new PizzaTopping_() { Name = "Chilli Sauce", Ingredients = "Three kinds of chilli." })" />
+
+

@@ -1,0 +1,88 @@
+﻿@page "/AddDepartament"
+
+<div class="mx-2">
+    <MudPaper Elevation="15" Class="p-4">
+        <div class="row">
+            <EditForm Model="departament" OnValidSubmit="CreateNewDepartament" FormName="AddDepartamentForm">
+                <DataAnnotationsValidator />
+                <ValidationSummary class="text-danger" role="alert" />
+                <div class="col-md-12">
+                    <h3>Add New Departament</h3>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="departament.Code">Code</label>
+                            <InputText for="Code" class="form-control" @bind-Value="departament.Code" />
+                            <ValidationMessage For="() => departament.Code" class="text-danger" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="departament.Name">Name</label>
+                            <InputText for="Name" class="form-control" @bind-Value="departament.Name" />
+                            <ValidationMessage For="() => departament.Name" class="text-danger" />
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <MudItem xs="12" Class="mt-4">
+                            <MudStack Row Justify="Justify.SpaceBetween">
+                                <MudButton Variant="Variant.Filled" Color="Color.Warning" StartIcon="@Icons.Material.Filled.ArrowCircleLeft" OnClick="BackToList">
+                                    Back to List
+                                </MudButton>
+
+                                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Save">
+                                    Save Departament
+                                </MudButton>
+                            </MudStack>
+                        </MudItem>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </MudPaper>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    public Departament departament { get; set; } = new();
+
+    public string UserId { get; set; } = string.Empty;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; } = null!;
+
+    [Inject]
+    public UserManager<ApplicationUser> userManager { get; set; } = null!;
+
+    [Inject]
+    public IDepartamentServices DepartamentServices { get; set; } = null!;
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = null!;
+
+    [Inject]
+    private ISnackbar snackBar { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationState).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentUser = await userManager.GetUserAsync(user);
+            UserId = currentUser.Id;
+        }
+    }
+
+    private async Task CreateNewDepartament()
+    {
+        departament.CreatedOn = DateTime.UtcNow;
+        departament.CreatedById = UserId;
+        var result = await DepartamentServices.AddDepartamentAsync(departament);
+        snackBar.Add("Department created successfully", Severity.Success);
+        BackToList();
+    }
+
+    private void BackToList()
+    {
+        NavigationManager.NavigateTo("/Departaments");
+    }
+}

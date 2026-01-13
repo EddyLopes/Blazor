@@ -1,0 +1,143 @@
+﻿@page "/company/detail/{id:int}"
+@using GestaoSpaceEdu.Domain.Entities
+@rendermode InteractiveServer
+
+<PageTitle>
+    Empresa - Confirmar exclusão
+</PageTitle>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-4 flex-grow-1">Empresa - Confirme a exclusão do registro</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="razaoSocial" class="form-label">Razão Social</label>
+                            <br/>
+                            @Company.LegalName
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="nomeFantasia" class="form-label">Nome Fantasia</label>
+                            <br />
+                            @Company.TradeName
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="cnpj" class="form-label">CNPJ</label>
+                            <br />
+                            @Company.TaxId
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="cep" class="form-label">CEP</label>
+                            <br />
+                            @Company.PostalCode
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="estado" class="form-label">Estado</label>
+                            <br />
+                            @Company.State
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="cidade" class="form-label">Cidade</label>
+                            <br />
+                            @Company.City
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="bairro" class="form-label">Bairro</label>
+                            <br />
+                            @Company.Neighborhood
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="endereco" class="form-label">Endereço</label>
+                            <br />
+                            @Company.Address
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-md-6 mt-3">
+                        <div>
+                            <label for="complemento" class="form-label">Complemento</label>
+                            <br />
+                            @Company.Complement
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="d-flex justify-content-between">
+                            <a href="/Company/List" class="btn btn-light">Voltar</a>
+                            <button @onclick="Delete" type="button" class="btn btn-soft-danger"><i class="ri-delete-bin-line"></i>Confirmar exclusão</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    public Company Company { get; set; } = new();
+
+    [Parameter]
+    public int Id { get; set; }
+
+    [Inject]
+    public IJSRuntime JS { get; set; } = null!;
+
+    [Inject]
+    public ICompanyRepository CompanyRepository { get; set; } = null!;
+
+    [Inject]
+    public AuthenticationStateProvider AuthenticationStateProvider { get; set; } = null!;
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = null!;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var userId = (await AuthenticationHelper.GetAuthenticationUserIdAsync(AuthenticationStateProvider)).Value;
+        var company = await CompanyRepository.GetAsync(Id);
+
+        if (company is null)
+        {
+            await JS.InvokeVoidAsync("alert", "Empresa não encontrada!");
+            NavigationManager.NavigateTo("/Company/List");
+            return;
+        }
+
+        if (company.UserId != userId.ToString())
+        {
+            await JS.InvokeVoidAsync("alert", "Você não tem permissão para editar esta empresa!");
+            NavigationManager.NavigateTo("/Company/List");
+            return;
+        }
+
+        Company = company;
+    }
+
+    private async Task Delete()
+    {
+        await CompanyRepository.DeleteAsync(Company.Id);
+        await JS.InvokeVoidAsync("alert", "Registro excluído com sucesso!");
+        NavigationManager.NavigateTo("/Company/List");
+    }
+}
