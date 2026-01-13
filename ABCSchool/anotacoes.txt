@@ -1,0 +1,7 @@
+• no powershell do desenvolvedor entrar navegar até o projeto Infrastructure, depois rodar o comando:
+	dotnet ef migrations add v1 --context TenantDbContext --output-dir Migrations/Multitenancy -s ../WebApi/WebApi.csproj
+	dotnet ef database update -s ../WebApi/WebApi.csproj --context TenantDbContext
+
+
+	dotnet ef migrations add v1 --context ApplicationDbContext --output-dir Migrations/Application -s ../WebApi/WebApi.csproj
+	dotnet ef database update -s ../WebApi/WebApi.csproj --context ApplicationDbContext

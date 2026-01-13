@@ -25,6 +25,11 @@ public class FinancialTransactionService : IFinancialTransactionRepository
         throw new NotImplementedException();
     }
 
+    public Task DeleteAsync(FinancialTransaction financialTransaction)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<PaginatedList<FinancialTransaction>> GetAllAsync(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize, string searchWord = "")
     {
         var url = $"/api/financialtransactions?companyId={companyId}&pageIndex={pageIndex}&searchWord={searchWord}&type={type}";
@@ -34,6 +39,16 @@ public class FinancialTransactionService : IFinancialTransactionRepository
     }
 
     public Task<FinancialTransaction?> GetAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<int> GetCountTransactionsSameGroupAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<List<FinancialTransaction>> GetTransactionsSameGroupAsync(int id)
     {
         throw new NotImplementedException();
     }
