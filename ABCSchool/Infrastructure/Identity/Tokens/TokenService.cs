@@ -66,20 +66,20 @@ public class TokenService : ITokenService
         return await GenerateTokenAndUpdateUserAsync(userInDb);
     }
 
-    public Task<TokenResponse> RefreshTokenAsync(RefreshTokenRequest request)
+    public async Task<TokenResponse> RefreshTokenAsync(RefreshTokenRequest request)
     {
         var userPrincipal = GetClaimsPrincipalFromExpiringToken(request.CurrentJwt);
         var userEmail = userPrincipal.GetEmail();
 
-        var userInDb = _userManager.FindByEmailAsync(userEmail).Result
+        var userInDb = await _userManager.FindByEmailAsync(userEmail)
             ?? throw new UnauthorizedException(["Authentication failed."]);
 
-        if(userInDb.RefreshToken != request.CurrentRefreshToken || userInDb.RefleshTokenExpiryTime < DateTime.UtcNow)
+        if (userInDb.RefreshToken != request.CurrentRefreshToken || userInDb.RefleshTokenExpiryTime < DateTime.UtcNow)
         {
             throw new UnauthorizedException(["Invalid token."]);
         }
 
-        return GenerateTokenAndUpdateUserAsync(userInDb);
+        return await GenerateTokenAndUpdateUserAsync(userInDb);
     }
 
     private ClaimsPrincipal GetClaimsPrincipalFromExpiringToken(string expiringToken)
@@ -92,13 +92,13 @@ public class TokenService : ITokenService
             ClockSkew = TimeSpan.Zero,
             RoleClaimType = ClaimTypes.Role,
             ValidateLifetime = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.secret))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret))
         };
 
         var tokenHandler = new JwtSecurityTokenHandler();
         var principal = tokenHandler.ValidateToken(expiringToken, tkValidationParams, out SecurityToken securityToken);
 
-        if(securityToken is not JwtSecurityToken jwtSecurityToken
+        if (securityToken is not JwtSecurityToken jwtSecurityToken
             || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
         {
             throw new UnauthorizedException(["Invalid Token provided. Failed to generate new token."]);
@@ -140,7 +140,7 @@ public class TokenService : ITokenService
 
     private SigningCredentials GenerateSigningCredentials()
     {
-        byte[] secret = Encoding.UTF8.GetBytes(_jwtSettings.secret);
+        byte[] secret = Encoding.UTF8.GetBytes(_jwtSettings.Secret);
         return new SigningCredentials(new SymmetricSecurityKey(secret), SecurityAlgorithms.HmacSha256);
     }
 

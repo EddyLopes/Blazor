@@ -100,7 +100,7 @@ public static class Startup
 
     public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, JwtSettings jwtSettings)
     {
-        var secret = Encoding.ASCII.GetBytes(jwtSettings.secret);
+        var secret = Encoding.ASCII.GetBytes(jwtSettings.Secret);
 
         services.AddAuthentication(auth =>
         {
@@ -118,7 +118,7 @@ public static class Startup
                 ClockSkew = TimeSpan.Zero,
                 RoleClaimType = ClaimTypes.Role,
                 ValidateLifetime = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.secret)),
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret)),
             };
 
             bearer.Events = new JwtBearerEvents
@@ -179,7 +179,7 @@ public static class Startup
                                                                                              BindingFlags.FlattenHierarchy)))
             {
                 var propertyValue = prop.GetValue(null);
-                if(propertyValue is not null)
+                if (propertyValue is not null)
                 {
                     options.AddPolicy(propertyValue.ToString()!, policy => policy.RequireClaim(ClaimConstants.Permission, propertyValue.ToString()!));
                 }

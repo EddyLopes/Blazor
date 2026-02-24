@@ -58,9 +58,9 @@ public class TenantDbContext : EFCoreStoreDbContext<ABCSchoolTenatInfo>
             entity.Property(e => e.IsActive)
                   .IsRequired();
 
-            //entity.HasIndex(e => e.Identifier)
-            //      .HasDatabaseName("IX_Tenants_Identifier")
-            //      .IsUnique();
+            entity.HasIndex(e => e.Identifier)
+                  .HasDatabaseName("IX_Tenants_Identifier")
+                  .IsUnique();
         });
     }
 }
