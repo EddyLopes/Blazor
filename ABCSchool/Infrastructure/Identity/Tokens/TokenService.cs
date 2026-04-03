@@ -74,7 +74,7 @@ public class TokenService : ITokenService
         var userInDb = await _userManager.FindByEmailAsync(userEmail)
             ?? throw new UnauthorizedException(["Authentication failed."]);
 
-        if (userInDb.RefreshToken != request.CurrentRefreshToken || userInDb.RefleshTokenExpiryTime < DateTime.UtcNow)
+        if (userInDb.RefreshToken != request.CurrentRefreshToken || userInDb.RefreshTokenExpiryTime < DateTime.UtcNow)
         {
             throw new UnauthorizedException(["Invalid token."]);
         }
@@ -111,7 +111,7 @@ public class TokenService : ITokenService
     {
         //Generate JWT and Refresh Token
         var newJwt = await GenerateToken(user);
-        user.RefleshTokenExpiryTime = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenExpiryTimeInDays);
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenExpiryTimeInDays);
 
         await _userManager.UpdateAsync(user);
 
@@ -119,7 +119,7 @@ public class TokenService : ITokenService
         {
             Jwt = newJwt,
             RefreshToken = user.RefreshToken,
-            RefreshTokenExpiryDate = user.RefleshTokenExpiryTime
+            RefreshTokenExpiryDate = user.RefreshTokenExpiryTime
         };
     }
 

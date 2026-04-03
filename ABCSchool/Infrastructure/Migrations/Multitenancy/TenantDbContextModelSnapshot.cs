@@ -65,7 +65,8 @@ namespace Infrastructure.Migrations.Multitenancy
                     b.HasKey("Id");
 
                     b.HasIndex("Identifier")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasDatabaseName("IX_Tenants_Identifier");
 
                     b.ToTable("Tenants", (string)null);
                 });

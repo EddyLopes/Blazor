@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations.Multitenancy
 {
     [DbContext(typeof(TenantDbContext))]
-    [Migration("20251121094101_v1")]
+    [Migration("20260403134603_v1")]
     partial class v1
     {
         /// <inheritdoc />
@@ -68,7 +68,8 @@ namespace Infrastructure.Migrations.Multitenancy
                     b.HasKey("Id");
 
                     b.HasIndex("Identifier")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasDatabaseName("IX_Tenants_Identifier");
 
                     b.ToTable("Tenants", (string)null);
                 });

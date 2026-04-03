@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations.Application
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251122085432_v1")]
+    [Migration("20260403134652_v1")]
     partial class v1
     {
         /// <inheritdoc />
@@ -184,12 +184,11 @@ namespace Infrastructure.Migrations.Application
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<DateTime>("RefleshTokenExpiryTime")
-                        .HasColumnType("datetime(6)");
-
                     b.Property<string>("RefreshToken")
-                        .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("longtext");
