@@ -52,12 +52,12 @@ public class TenantDbSeeder : ITenantDbSeeder
     {
         using var scope = _serviceProvider.CreateAsyncScope();
         _serviceProvider.GetRequiredService<IMultiTenantContextSetter>()
-            .MultiTenantContext = new MultiTenantContext<ABCSchoolTenatInfo>()
-            {
-                TenantInfo = currentTenant,
-            };
+                        .MultiTenantContext = new MultiTenantContext<ABCSchoolTenatInfo>()
+                        {
+                            TenantInfo = currentTenant,
+                        };
 
         await scope.ServiceProvider.GetRequiredService<ApplicationDbSeeder>()
-            .InitializeDatabaseAsync(ct);
+                                   .InitializeDatabaseAsync(ct);
     }
 }

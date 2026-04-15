@@ -111,6 +111,8 @@ public class TokenService : ITokenService
     {
         //Generate JWT and Refresh Token
         var newJwt = await GenerateToken(user);
+
+        user.RefreshToken = GenerateRefreshToken();
         user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenExpiryTimeInDays);
 
         await _userManager.UpdateAsync(user);
