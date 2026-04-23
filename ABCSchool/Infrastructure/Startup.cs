@@ -1,5 +1,6 @@
 ﻿using Application;
 using Application.Features.Identity.Tokens;
+using Application.Features.Tenancy;
 using Application.Wrappers;
 using Finbuckle.MultiTenant;
 using Infrastructure.Constants;
@@ -52,6 +53,7 @@ public static class Startup
                })
                .AddTransient<ITenantDbSeeder, TenantDbSeeder>()
                .AddTransient<ApplicationDbSeeder>()
+               .AddTransient<ITenantService, TenantService>()
                .AddIdentityService()
                .AddPermissions()
                .AddOpenApiDocumentation(config);

@@ -59,7 +59,7 @@ public class TenantsController : BaseApiController
         return BadRequest(response);
     }
 
-    [HttpPut("{tenantId}")]
+    [HttpGet("{tenantId}")]
     [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Tenants)]
     public async Task<IActionResult> GetTenantByIdAsync(string tenantId)
     {
@@ -71,7 +71,7 @@ public class TenantsController : BaseApiController
         return BadRequest(response);
     }
 
-    [HttpPut("all")]
+    [HttpGet("all")]
     [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Tenants)]
     public async Task<IActionResult> GetTenantsAsync()
     {

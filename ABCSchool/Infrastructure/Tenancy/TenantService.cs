@@ -91,13 +91,18 @@ public class TenantService : ITenantService
         return tenantInDb.Adapt<TenantResponse>();
     }
 
-    public Task<List<TenantResponse>> GetTenantsAsync()
+    public async Task<List<TenantResponse>> GetTenantsAsync()
     {
-        throw new NotImplementedException();
+        var tenantsInDb = await _tenantStore.GetAllAsync();
+        return tenantsInDb.Adapt<List<TenantResponse>>();
     }
 
-    public Task<string> UpdateSubscriptionAsync(UpdateTenantSubscriptionRequest updateRequest)
+    public async Task<string> UpdateSubscriptionAsync(UpdateTenantSubscriptionRequest updateTenantSubscription)
     {
-        throw new NotImplementedException();
+        var tenantInDb = await _tenantStore.TryGetAsync(updateTenantSubscription.TenantId);
+        tenantInDb.ValidUpTo = updateTenantSubscription.NewExpiryDate;
+
+        await _tenantStore.TryUpdateAsync(tenantInDb);
+        return tenantInDb.Identifier;
     }
 }
