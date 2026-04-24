@@ -1,5 +1,6 @@
 ﻿using Application;
 using Application.Features.Identity.Tokens;
+using Application.Features.Schools;
 using Application.Features.Tenancy;
 using Application.Wrappers;
 using Finbuckle.MultiTenant;
@@ -9,6 +10,7 @@ using Infrastructure.Identity.Auth;
 using Infrastructure.Identity.Models;
 using Infrastructure.Identity.Tokens;
 using Infrastructure.OpenApi;
+using Infrastructure.Schools;
 using Infrastructure.Tenancy;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -54,6 +56,7 @@ public static class Startup
                .AddTransient<ITenantDbSeeder, TenantDbSeeder>()
                .AddTransient<ApplicationDbSeeder>()
                .AddTransient<ITenantService, TenantService>()
+               .AddTransient<ISchoolService, SchoolService>()
                .AddIdentityService()
                .AddPermissions()
                .AddOpenApiDocumentation(config);
