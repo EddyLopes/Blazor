@@ -2,7 +2,7 @@
 
 namespace Application.Features.Schools.Validations;
 
-public class CreateSchoolRequestValidator : AbstractValidator<CreateSchoolRequest>
+internal class CreateSchoolRequestValidator : AbstractValidator<CreateSchoolRequest>
 {
     public CreateSchoolRequestValidator()
     {
