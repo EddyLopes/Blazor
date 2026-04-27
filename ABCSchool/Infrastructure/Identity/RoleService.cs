@@ -19,9 +19,9 @@ public class RoleService : IRoleService
     private readonly IMultiTenantContextAccessor<ABCSchoolTenatInfo> _tenantInfoContextAccessor;
 
     public RoleService(
-        RoleManager<ApplicationRole> roleManager, 
-        UserManager<ApplicationUser> userManager, 
-        ApplicationDbContext context, 
+        RoleManager<ApplicationRole> roleManager,
+        UserManager<ApplicationUser> userManager,
+        ApplicationDbContext context,
         IMultiTenantContextAccessor<ABCSchoolTenatInfo> tenantInfoContextAccessor)
     {
         _roleManager = roleManager;
@@ -52,24 +52,24 @@ public class RoleService : IRoleService
         var role = await _roleManager.FindByIdAsync(id)
             ?? throw new NotFoundException(["Role does not exist."]);
 
-        if (RoleConstants.IsDefaultRole(role.Name))
+        if (RoleConstants.IsDefaultRole(role.Name ?? ""))
         {
             throw new ConflictException([$"Not allowed to delete '{role.Name}' role."]);
         }
 
-        if((await _userManager.GetUsersInRoleAsync(role.Name)).Count > 0)
+        if ((await _userManager.GetUsersInRoleAsync(role.Name ?? "")).Count > 0)
         {
             throw new ConflictException([$"Not allowed to delete '{role.Name}' role as it is currently assigned to users."]);
         }
 
         var result = await _roleManager.DeleteAsync(role);
-        
+
         if (!result.Succeeded)
         {
             throw new IdentityException(GetIdentityResultErrorDescriptions(result));
         }
 
-        return role.Name;
+        return role.Name ?? "";
     }
 
     public async Task<bool> DoesItExistsAsync(string name)
@@ -85,7 +85,7 @@ public class RoleService : IRoleService
 
     public async Task<RoleResponse> GetByIdAsync(string id, CancellationToken ct)
     {
-        var role = await _roleManager.FindByIdAsync(id)
+        var role = await _context.Roles.FirstOrDefaultAsync(role => role.Id == id, ct)
             ?? throw new NotFoundException(["Role does not exist."]);
         return role.Adapt<RoleResponse>();
     }
@@ -93,22 +93,79 @@ public class RoleService : IRoleService
     public async Task<RoleResponse> GetRoleWithPermissionsAsync(string id, CancellationToken ct)
     {
         var role = await GetByIdAsync(id, ct);
+
         role.Permissions = await _context.RoleClaims
             .Where(x => x.RoleId == id && x.ClaimType == ClaimConstants.Permission)
-            .Select(x => x.ClaimValue)
-            .ToListAsync(ct); 
-        
+            .Select(x => x.ClaimValue ?? "")
+            .ToListAsync(ct);
+
         return role;
     }
 
-    public Task<string> UpdateAsync(UpdateRoleRequest request)
+    public async Task<string> UpdateAsync(UpdateRoleRequest request)
     {
-        throw new NotImplementedException();
+        var role = await _roleManager.FindByIdAsync(request.Id)
+            ?? throw new NotFoundException(["Role does not exist."]);
+
+        if (RoleConstants.IsDefaultRole(role.Name ?? ""))
+        {
+            throw new ConflictException([$"Changes not allowed on system role '{role.Name}'."]);
+        }
+
+        role.Name = request.Name;
+        role.Description = request.Description;
+        role.NormalizedName = request.Name.ToUpperInvariant();
+
+        var result = await _roleManager.UpdateAsync(role);
+        if (!result.Succeeded)
+        {
+            throw new IdentityException(GetIdentityResultErrorDescriptions(result));
+        }
+
+        return role.Name;
     }
 
-    public Task<string> UpdatePermissionsAsync(UpdateRolePermissionsRequest request)
+    public async Task<string> UpdatePermissionsAsync(UpdateRolePermissionsRequest request)
     {
-        throw new NotImplementedException();
+        var role = await _roleManager.FindByIdAsync(request.RoleId)
+            ?? throw new NotFoundException(["Role does not exist."]);
+
+        if (role.Name == RoleConstants.Admin)
+        {
+            throw new ConflictException([$"Not allowed to change permissions for '{role.Name}' role."]);
+        }
+
+        if (_tenantInfoContextAccessor.MultiTenantContext.TenantInfo.Id != TenancyConstants.Root.Id)
+        {
+            request.NewPermissions.RemoveAll(x => x.StartsWith("Permission.Tenants."));
+        }
+
+        var currentClaims = await _roleManager.GetClaimsAsync(role);
+
+        foreach (var claim in currentClaims.Where(c => !request.NewPermissions.Any(p => p == c.Value)))
+        {
+            var result = await _roleManager.RemoveClaimAsync(role, claim);
+            if (!result.Succeeded)
+            {
+                throw new IdentityException(GetIdentityResultErrorDescriptions(result));
+            }
+        }
+
+        foreach (var newPermission in request.NewPermissions.Where(p => !currentClaims.Any(c => c.Value == p)))
+        {
+            await _context.RoleClaims.AddAsync(new ApplicationRoleClaim
+            {
+                RoleId = role.Id,
+                ClaimType = ClaimConstants.Permission,
+                ClaimValue = newPermission,
+                Description = "",
+                Group = ""
+            });
+        }
+        
+        await _context.SaveChangesAsync();
+
+        return "Permissions updated successfully.";
     }
 
     private List<string> GetIdentityResultErrorDescriptions(IdentityResult identityResult)

@@ -1,4 +1,5 @@
 ﻿using Application;
+using Application.Features.Identity.Roles;
 using Application.Features.Identity.Tokens;
 using Application.Features.Schools;
 using Application.Features.Tenancy;
@@ -6,6 +7,7 @@ using Application.Wrappers;
 using Finbuckle.MultiTenant;
 using Infrastructure.Constants;
 using Infrastructure.Contexts;
+using Infrastructure.Identity;
 using Infrastructure.Identity.Auth;
 using Infrastructure.Identity.Models;
 using Infrastructure.Identity.Tokens;
@@ -84,7 +86,8 @@ public static class Startup
         .AddEntityFrameworkStores<ApplicationDbContext>()
         .AddDefaultTokenProviders()
         .Services
-        .AddScoped<ITokenService, TokenService>();
+        .AddScoped<ITokenService, TokenService>()
+        .AddScoped<IRoleService, RoleService>();
     }
 
     public static IServiceCollection AddPermissions(this IServiceCollection services)
