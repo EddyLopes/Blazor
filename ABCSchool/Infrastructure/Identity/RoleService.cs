@@ -41,7 +41,7 @@ public class RoleService : IRoleService
         var result = await _roleManager.CreateAsync(newRole);
         if (!result.Succeeded)
         {
-            throw new IdentityException(GetIdentityResultErrorDescriptions(result));
+            throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
         }
 
         return newRole.Name;
@@ -66,7 +66,7 @@ public class RoleService : IRoleService
 
         if (!result.Succeeded)
         {
-            throw new IdentityException(GetIdentityResultErrorDescriptions(result));
+            throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
         }
 
         return role.Name ?? "";
@@ -119,7 +119,7 @@ public class RoleService : IRoleService
         var result = await _roleManager.UpdateAsync(role);
         if (!result.Succeeded)
         {
-            throw new IdentityException(GetIdentityResultErrorDescriptions(result));
+            throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
         }
 
         return role.Name;
@@ -147,7 +147,7 @@ public class RoleService : IRoleService
             var result = await _roleManager.RemoveClaimAsync(role, claim);
             if (!result.Succeeded)
             {
-                throw new IdentityException(GetIdentityResultErrorDescriptions(result));
+                throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
             }
         }
 
@@ -166,17 +166,5 @@ public class RoleService : IRoleService
         await _context.SaveChangesAsync();
 
         return "Permissions updated successfully.";
-    }
-
-    private List<string> GetIdentityResultErrorDescriptions(IdentityResult identityResult)
-    {
-        var errorDescriptions = new List<string>();
-
-        foreach (var error in identityResult.Errors)
-        {
-            errorDescriptions.Add(error.Description);
-        }
-
-        return errorDescriptions;
     }
 }
