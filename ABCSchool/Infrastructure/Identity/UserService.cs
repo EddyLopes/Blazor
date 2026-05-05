@@ -5,7 +5,10 @@ using Infrastructure.Constants;
 using Infrastructure.Contexts;
 using Infrastructure.Identity.Models;
 using Infrastructure.Tenancy;
+using Mapster;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Identity;
 
@@ -33,85 +36,207 @@ public class UserService : IUserService
         var user = await GetUserAsync(userId);
 
         user.IsActive = activation;
-        
+
         var result = await _userManager.UpdateAsync(user);
-        
+
         if (!result.Succeeded)
         {
             throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
         }
-        
+
         return userId;
     }
 
     public async Task<string> AssignRolesAsync(string userId, UserRolesRequest request)
     {
-        var user = await GetUserAsync(userId);
-        if(await _userManager.IsInRoleAsync(user, RoleConstants.Admin)
+        var userInDb = await GetUserAsync(userId);
+
+        if (await _userManager.IsInRoleAsync(userInDb, RoleConstants.Admin)
             && request.UserRoles.Any(x => !x.IsAssigned && x.Name == RoleConstants.Admin))
         {
-            if(user.Email == TenancyConstants.Root.Email)
+            var adminUsersCount = (await _userManager.GetUsersInRoleAsync(RoleConstants.Admin)).Count;
+
+            if (userInDb.Email == TenancyConstants.Root.Email)
             {
-                if(_tenantInfoContextAccessor.MultiTenantContext.TenantInfo.Id == TenancyConstants.Root.Id)
+                if (_tenantInfoContextAccessor.MultiTenantContext.TenantInfo.Id == TenancyConstants.Root.Id)
                 {
                     throw new ConflictException(["Not allowed to remove Admin role for a Root Tenant User."]);
                 }
             }
-            else
+            else if (adminUsersCount <= 2)
             {
-
+                throw new ConflictException(["Not allowed. Tenant should have at least two Admin Users."]);
             }
         }
+
+        foreach (var userRole in request.UserRoles)
+        {
+            if (userRole.IsAssigned)
+            {
+                if (!await _userManager.IsInRoleAsync(userInDb, userRole.Name))
+                {
+                    await _userManager.AddToRoleAsync(userInDb, userRole.Name);
+                }
+            }
+            else
+            {
+                await _userManager.RemoveFromRoleAsync(userInDb, userRole.Name);
+            }
+        }
+
+        return userId;
     }
 
-    public Task<string> ChangePasswordAsync(ChangePassworRequest request)
+    public async Task<string> ChangePasswordAsync(ChangePassworRequest request)
     {
-        throw new NotImplementedException();
+        var userInDb = await GetUserAsync(request.UserId);
+
+        if(request.NewPassword != request.ConfirmNewPassword)
+        {
+            throw new ConflictException(["Passwords do not match."]);
+        }
+
+        var result = await _userManager.ChangePasswordAsync(userInDb, request.CurrentPassword, request.NewPassword);
+
+        if (!result.Succeeded)
+        {
+            throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
+        }
+
+        return userInDb.Id;
     }
 
-    public Task<string> CreateAsync(CreateUserRequest request)
+    public async Task<string> CreateAsync(CreateUserRequest request)
     {
-        throw new NotImplementedException();
+        if(request.Password != request.ConfirmPassword)
+        {
+            throw new ConflictException(["Passwords do not match"]);
+        }
+
+        if(await IsEmailTakenAsync(request.Email))
+        {
+            throw new ConflictException(["Email already taken."]);
+        }
+
+        var newUser = new ApplicationUser()
+        {
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            Email = request.Email,
+            PhoneNumber = request.PhoneNumber,
+            IsActive = request.IsActive,
+            UserName = request.Email,
+            EmailConfirmed = true
+        };
+
+        var result = await _userManager.CreateAsync(newUser, request.Password);
+
+        if (!result.Succeeded)
+        {
+            throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
+        }
+
+        return newUser.Id;
     }
 
-    public Task<string> DeleteAsync(string userId)
+    public async Task<string> DeleteAsync(string userId)
     {
-        throw new NotImplementedException();
+        var userInDb = await GetUserAsync(userId);
+
+        if(userInDb.Email == TenancyConstants.Root.Email)
+        {
+            throw new ConflictException(["Not allowed to remove Admin User for a Root Tenant."]);
+        }
+
+        _context.Users.Remove(userInDb);
+        await _context.SaveChangesAsync();
+
+        return userId;
     }
 
-    public Task<List<UserResponse>> GetAllAsync(CancellationToken ct)
+    public async Task<List<UserResponse>> GetAllAsync(CancellationToken ct)
     {
-        throw new NotImplementedException();
+        var usersInDb = await _userManager.Users.ToListAsync(ct);
+
+        return usersInDb.Adapt<List<UserResponse>>();
     }
 
-    public Task<UserResponse> GetByIdAsync(string userId, CancellationToken ct)
+    public async Task<UserResponse> GetByIdAsync(string userId, CancellationToken ct)
     {
-        throw new NotImplementedException();
+        var userInDb = await GetUserAsync(userId);
+        return userInDb.Adapt<UserResponse>();
     }
 
-    public Task<List<string>> GetUserPermissionsAsync(string userId, CancellationToken ct)
+    public async Task<List<string>> GetUserPermissionsAsync(string userId, CancellationToken ct)
     {
-        throw new NotImplementedException();
+        var userInDb = await GetUserAsync(userId);
+
+        var userRolesNames = await _userManager.GetRolesAsync(userInDb);
+
+        var permissions = new List<string>();
+
+        foreach (var role in await _roleManager.Roles
+                                               .Where(x => userRolesNames.Contains(x.Name ?? ""))
+                                               .ToListAsync(ct))
+        {
+            permissions.AddRange(await _context.RoleClaims
+                                               .Where(x => x.RoleId == role.Id &&  
+                                                           x.ClaimType == ClaimConstants.Permission)
+                                               .Select(x => x.ClaimValue ?? "")
+                                               .ToListAsync(ct));
+        }
+
+        return permissions.Distinct().ToList();
     }
 
-    public Task<List<UserRoleResponse>> GetUserRolesAsync(string userId, CancellationToken ct)
+    public async Task<List<UserRoleResponse>> GetUserRolesAsync(string userId, CancellationToken ct)
     {
-        throw new NotImplementedException();
+        var userInDb = await GetUserAsync(userId);
+
+        var userRoles = new List<UserRoleResponse>();
+
+        var rolesInDb = await _roleManager.Roles.ToListAsync(ct);
+
+        foreach (var role in rolesInDb)
+        {
+            userRoles.Add(new UserRoleResponse
+            {
+                RoleId = role.Id,
+                Name = role.Name!,
+                Description = role.Description,
+                IsAssigned = await _userManager.IsInRoleAsync(userInDb, role.Name!)
+            });
+        }
+
+        return userRoles;
     }
 
-    public Task<bool> IsEmailTokenAsync(string email)
+    public async Task<bool> IsEmailTakenAsync(string email)
     {
-        throw new NotImplementedException();
+        return await _userManager.FindByEmailAsync(email) is not null;
     }
 
-    public Task<bool> IsPermissionsAssignedAsync(string userId, string permission, CancellationToken ct = default)
+    public async Task<bool> IsPermissionsAssignedAsync(string userId, string permission, CancellationToken ct = default)
     {
-        throw new NotImplementedException();
+        return (await GetUserPermissionsAsync(userId, ct)).Contains(permission);
     }
 
-    public Task<string> UpdateAsync(UpdateUserRequest request)
+    public async Task<string> UpdateAsync(UpdateUserRequest request)
     {
-        throw new NotImplementedException();
+        var userInDb = await GetUserAsync(request.Id);
+
+        userInDb.FirstName = request.FirstName;
+        userInDb.LastName = request.LastName;
+        userInDb.PhoneNumber = request.PhoneNumber;
+
+        var result = await _userManager.UpdateAsync(userInDb);
+
+        if (!result.Succeeded)
+        {
+            throw new IdentityException(IdentityHelper.GetIdentityResultErrorDescriptions(result));
+        }
+
+        return userInDb.Id;
     }
 
     private async Task<ApplicationUser> GetUserAsync(string userId)

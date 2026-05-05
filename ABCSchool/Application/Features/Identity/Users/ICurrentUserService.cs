@@ -8,7 +8,7 @@ public interface ICurrentUserService
     string GetUserId();
     string GetUserEmail();
     string GetUserTenant();
-    string IsAuthenticated();
+    bool IsAuthenticated();
     bool IsInRole(string roleName);
     IEnumerable<Claim> GetUserClaims();
     void SetCurretUser(ClaimsPrincipal principal);
