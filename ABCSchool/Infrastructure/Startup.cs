@@ -90,7 +90,8 @@ public static class Startup
         .AddScoped<ITokenService, TokenService>()
         .AddScoped<IRoleService, RoleService>()
         .AddScoped<IUserService, UserService>()
-        .AddScoped<ICurrentUserService, CurrentUserService>();
+        .AddScoped<ICurrentUserService, CurrentUserService>()
+        .AddScoped<CurrentUserMiddleware>();
     }
 
     public static IServiceCollection AddPermissions(this IServiceCollection services)
@@ -245,6 +246,7 @@ public static class Startup
     public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
     {
         return app.UseAuthentication()
+                  .UseMiddleware<CurrentUserMiddleware>()
                   .UseMultiTenant()
                   .UseAuthorization()
                   .UseOpenApiDocumentation();
