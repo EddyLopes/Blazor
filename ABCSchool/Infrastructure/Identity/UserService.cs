@@ -87,7 +87,7 @@ public class UserService : IUserService
         return userId;
     }
 
-    public async Task<string> ChangePasswordAsync(ChangePassworRequest request)
+    public async Task<string> ChangePasswordAsync(ChangePasswordRequest request)
     {
         var userInDb = await GetUserAsync(request.UserId);
 

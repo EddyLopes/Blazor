@@ -6,7 +6,7 @@ public interface IUserService
     Task<string> UpdateAsync(UpdateUserRequest request);
     Task<string> DeleteAsync(string userId);
     Task<string> ActivateOrDeactivateAsync(string userId, bool activation);
-    Task<string> ChangePasswordAsync(ChangePassworRequest request);
+    Task<string> ChangePasswordAsync(ChangePasswordRequest request);
     Task<string> AssignRolesAsync(string userId, UserRolesRequest request);
     Task<List<UserResponse>> GetAllAsync(CancellationToken ct);
     Task<UserResponse> GetByIdAsync(string userId, CancellationToken ct);

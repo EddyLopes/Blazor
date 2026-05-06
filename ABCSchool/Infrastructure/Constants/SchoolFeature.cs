@@ -17,7 +17,7 @@ public static class SchoolFeature
     public const string Tenants = nameof(Tenants);
     public const string Users = nameof(Users);
     public const string Roles = nameof(Roles);
-    public const string UsersRoles = nameof(UsersRoles);
+    public const string UserRoles = nameof(UserRoles);
     public const string RoleClaims = nameof(RoleClaims);
     public const string Schools = nameof(Schools);
     public const string Tokens = nameof(Tokens);
@@ -43,8 +43,8 @@ public static class SchoolPermissions
         new SchoolPermission(Action: SchoolAction.Delete, Feature: SchoolFeature.Users, Description: "Delete Users", Group: "SystemAccess"),
         new SchoolPermission(Action: SchoolAction.Read, Feature: SchoolFeature.Users, Description: "Read Users", Group : "SystemAccess"),
 
-        new SchoolPermission(Action: SchoolAction.Read, Feature: SchoolFeature.UsersRoles, Description: "Read User Roles", Group : "SystemAccess"),
-        new SchoolPermission(Action: SchoolAction.Update, Feature: SchoolFeature.UsersRoles, Description: "Update User Roles", Group : "SystemAccess"),
+        new SchoolPermission(Action: SchoolAction.Read, Feature: SchoolFeature.UserRoles, Description: "Read User Roles", Group : "SystemAccess"),
+        new SchoolPermission(Action: SchoolAction.Update, Feature: SchoolFeature.UserRoles, Description: "Update User Roles", Group : "SystemAccess"),
 
         new SchoolPermission(Action: SchoolAction.Read, Feature: SchoolFeature.Roles, Description: "Read Roles", Group: "SystemAccess"),
         new SchoolPermission(Action: SchoolAction.Create, Feature: SchoolFeature.Roles, Description: "Create Roles", Group: "SystemAccess"),
