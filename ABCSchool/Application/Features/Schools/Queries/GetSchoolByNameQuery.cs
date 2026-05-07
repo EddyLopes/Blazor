@@ -13,7 +13,7 @@ public class GetSchoolByNameQueryHandler : IRequestHandler<GetSchoolByNameQuery,
 {
     private readonly ISchoolService _schoolService;
 
-    protected GetSchoolByNameQueryHandler(ISchoolService schoolService)
+    public GetSchoolByNameQueryHandler(ISchoolService schoolService)
     {
         _schoolService = schoolService;
     }
