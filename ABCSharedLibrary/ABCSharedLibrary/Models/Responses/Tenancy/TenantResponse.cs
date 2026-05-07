@@ -1,4 +1,4 @@
-﻿namespace Application.Features.Tenancy;
+﻿namespace ABCSharedLibrary.Models.Responses.Tenancy;
 
 public class TenantResponse
 {

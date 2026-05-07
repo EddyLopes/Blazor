@@ -4,6 +4,15 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <Title>ABC Shared Library</Title>
+	  <PackageId>ABCShared.Library</PackageId>
+	  <Authors>Edimar Lopes</Authors>
+	  <Company>Lopes Company</Company>
+	  <Description>This package include common resources that can be shared between back-end and front-end apps</Description>
+	  <SignAssembly>true</SignAssembly>
+	  <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+	  <PackageProjectUrl>https://cloudtoys.com/packages</PackageProjectUrl>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>

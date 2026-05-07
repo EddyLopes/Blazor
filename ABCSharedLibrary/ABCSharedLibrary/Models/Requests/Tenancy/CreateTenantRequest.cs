@@ -1,4 +1,4 @@
-﻿namespace Application.Features.Tenancy;
+﻿namespace ABCSharedLibrary.Models.Requests.Tenancy;
 
 public class CreateTenantRequest
 {

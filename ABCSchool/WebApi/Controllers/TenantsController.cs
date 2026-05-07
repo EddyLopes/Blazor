@@ -12,7 +12,7 @@ namespace WebApi.Controllers;
 public class TenantsController : BaseApiController
 {
     [HttpPost("add")]
-    [ShouldHavePermission(SchoolAction.Create, SchoolFeature.Tenants)]
+    [ShouldHavePermission(SchoolAction.Create, SchoolPermissions.Tenants)]
     public async Task<IActionResult> CreateTenantAsync([FromBody] CreateTenantRequest createTenantReques)
     {
         var response = await Sender.Send(new CreateTenantCommand { CreateTenant = createTenantReques });
@@ -24,7 +24,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpPut("{tenantId}/activate")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.Tenants)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.Tenants)]
     public async Task<IActionResult> ActivateTenantAsync(string tenantId)
     {
         var response = await Sender.Send(new ActivateTenantCommand { TenantId = tenantId });
@@ -36,7 +36,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpPut("{tenantId}/deactivate")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.Tenants)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.Tenants)]
     public async Task<IActionResult> DeactivateTenantAsync(string tenantId)
     {
         var response = await Sender.Send(new DeactivateTenantCommand { TenantId = tenantId });
@@ -48,7 +48,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpPut("upgrade")]
-    [ShouldHavePermission(SchoolAction.UpgradeSubscrition, SchoolFeature.Tenants)]
+    [ShouldHavePermission(SchoolAction.UpgradeSubscrition, SchoolPermissions.Tenants)]
     public async Task<IActionResult> UpgradeTenantSubscriptionAsync([FromBody] UpdateTenantSubscriptionRequest updateTenant)
     {
         var response = await Sender.Send(new UpdateTenantSubscriptionCommand { UpdateTenantSubscription = updateTenant });
@@ -60,7 +60,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpGet("{tenantId}")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Tenants)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Tenants)]
     public async Task<IActionResult> GetTenantByIdAsync(string tenantId)
     {
         var response = await Sender.Send(new GetTenantByIdQuery { TenantId = tenantId });
@@ -72,7 +72,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpGet("all")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Tenants)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Tenants)]
     public async Task<IActionResult> GetTenantsAsync()
     {
         var response = await Sender.Send(new GetTenantsQuery());
