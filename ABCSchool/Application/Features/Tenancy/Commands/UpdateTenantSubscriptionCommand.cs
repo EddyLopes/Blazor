@@ -1,4 +1,5 @@
-﻿using Application.Wrappers;
+﻿using ABCSharedLibrary.Models.Requests.Tenancy;
+using ABCSharedLibrary.Wrappers;
 using MediatR;
 
 namespace Application.Features.Tenancy.Commands;

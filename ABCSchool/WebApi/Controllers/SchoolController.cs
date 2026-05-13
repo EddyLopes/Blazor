@@ -1,4 +1,4 @@
-﻿using Application.Features.Schools;
+﻿using ABCSharedLibrary.Models.Requests.Schools;
 using Application.Features.Schools.Commands;
 using Application.Features.Schools.Queries;
 using Infrastructure.Constants;

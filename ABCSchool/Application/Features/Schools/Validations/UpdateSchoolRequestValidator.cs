@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using ABCSharedLibrary.Models.Requests.Schools;
+using Domain.Entities;
 using FluentValidation;
 
 namespace Application.Features.Schools.Validations;

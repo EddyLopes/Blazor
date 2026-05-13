@@ -1,4 +1,7 @@
-﻿namespace Application.Features.Tenancy;
+﻿using ABCSharedLibrary.Models.Requests.Tenancy;
+using ABCSharedLibrary.Models.Responses.Tenancy;
+
+namespace Application.Features.Tenancy;
 
 public interface ITenantService
 {

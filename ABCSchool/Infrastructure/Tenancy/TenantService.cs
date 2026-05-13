@@ -1,4 +1,6 @@
-﻿using Application.Features.Tenancy;
+﻿using ABCSharedLibrary.Models.Requests.Tenancy;
+using ABCSharedLibrary.Models.Responses.Tenancy;
+using Application.Features.Tenancy;
 using Finbuckle.MultiTenant;
 using Finbuckle.MultiTenant.Abstractions;
 using Infrastructure.Contexts;

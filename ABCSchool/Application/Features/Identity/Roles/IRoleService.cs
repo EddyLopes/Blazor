@@ -1,4 +1,7 @@
-﻿namespace Application.Features.Identity.Roles;
+﻿using ABCSharedLibrary.Models.Requests.Identity.Roles;
+using ABCSharedLibrary.Models.Responses.Identity.Roles;
+
+namespace Application.Features.Identity.Roles;
 
 public interface IRoleService
 {

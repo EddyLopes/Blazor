@@ -1,4 +1,5 @@
-﻿using Application.Features.Tenancy;
+﻿using ABCSharedLibrary.Models.Requests.Tenancy;
+using Application.Features.Tenancy;
 using Application.Features.Tenancy.Commands;
 using Application.Features.Tenancy.Queries;
 using Infrastructure.Constants;

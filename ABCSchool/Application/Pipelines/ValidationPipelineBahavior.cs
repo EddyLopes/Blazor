@@ -1,4 +1,4 @@
-﻿using Application.Wrappers;
+﻿using ABCSharedLibrary.Wrappers;
 using FluentValidation;
 using MediatR;
 
