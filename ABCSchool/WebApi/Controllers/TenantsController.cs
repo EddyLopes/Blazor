@@ -1,5 +1,4 @@
 ﻿using ABCSharedLibrary.Models.Requests.Tenancy;
-using Application.Features.Tenancy;
 using Application.Features.Tenancy.Commands;
 using Application.Features.Tenancy.Queries;
 using Infrastructure.Constants;
@@ -13,7 +12,7 @@ namespace WebApi.Controllers;
 public class TenantsController : BaseApiController
 {
     [HttpPost("add")]
-    [ShouldHavePermission(SchoolAction.Create, SchoolPermissions.Tenants)]
+    [ShouldHavePermission(SchoolAction.Create, SchoolFeature.Tenants)]
     public async Task<IActionResult> CreateTenantAsync([FromBody] CreateTenantRequest createTenantReques)
     {
         var response = await Sender.Send(new CreateTenantCommand { CreateTenant = createTenantReques });
@@ -25,7 +24,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpPut("{tenantId}/activate")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.Tenants)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.Tenants)]
     public async Task<IActionResult> ActivateTenantAsync(string tenantId)
     {
         var response = await Sender.Send(new ActivateTenantCommand { TenantId = tenantId });
@@ -37,7 +36,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpPut("{tenantId}/deactivate")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.Tenants)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.Tenants)]
     public async Task<IActionResult> DeactivateTenantAsync(string tenantId)
     {
         var response = await Sender.Send(new DeactivateTenantCommand { TenantId = tenantId });
@@ -49,7 +48,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpPut("upgrade")]
-    [ShouldHavePermission(SchoolAction.UpgradeSubscrition, SchoolPermissions.Tenants)]
+    [ShouldHavePermission(SchoolAction.UpgradeSubscrition, SchoolFeature.Tenants)]
     public async Task<IActionResult> UpgradeTenantSubscriptionAsync([FromBody] UpdateTenantSubscriptionRequest updateTenant)
     {
         var response = await Sender.Send(new UpdateTenantSubscriptionCommand { UpdateTenantSubscription = updateTenant });
@@ -61,7 +60,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpGet("{tenantId}")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Tenants)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Tenants)]
     public async Task<IActionResult> GetTenantByIdAsync(string tenantId)
     {
         var response = await Sender.Send(new GetTenantByIdQuery { TenantId = tenantId });
@@ -73,7 +72,7 @@ public class TenantsController : BaseApiController
     }
 
     [HttpGet("all")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Tenants)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Tenants)]
     public async Task<IActionResult> GetTenantsAsync()
     {
         var response = await Sender.Send(new GetTenantsQuery());

@@ -11,7 +11,7 @@ namespace WebApi.Controllers;
 public class SchoolController : BaseApiController
 {
     [HttpPost("add")]
-    [ShouldHavePermission(SchoolAction.Create, SchoolPermissions.Schools)]
+    [ShouldHavePermission(SchoolAction.Create, SchoolFeature.Schools)]
     public async Task<IActionResult> CreateSchoolAsync([FromBody] CreateSchoolRequest request)
     {
         var response = await Sender.Send(new CreateSchoolCommand { CreateSchool = request });
@@ -23,7 +23,7 @@ public class SchoolController : BaseApiController
     }
 
     [HttpPut("update")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.Schools)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.Schools)]
     public async Task<IActionResult> UpdateSchoolAsync([FromBody] UpdateSchoolRequest updateSchool)
     {
         var response = await Sender.Send(new UpdateSchoolCommand { UpdateSchool = updateSchool });
@@ -35,7 +35,7 @@ public class SchoolController : BaseApiController
     }
 
     [HttpDelete("{schoolId}")]
-    [ShouldHavePermission(SchoolAction.Delete, SchoolPermissions.Schools)]
+    [ShouldHavePermission(SchoolAction.Delete, SchoolFeature.Schools)]
     public async Task<IActionResult> DeleteSchoolAsync(int schoolId)
     {
         var response = await Sender.Send(new DeleteSchoolCommand { SchoolId = schoolId });
@@ -47,7 +47,7 @@ public class SchoolController : BaseApiController
     }
 
     [HttpGet("by-id/{schoolId}")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Schools)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Schools)]
     public async Task<IActionResult> GetSchoolByIdAsync(int schoolId)
     {
         var response = await Sender.Send(new GetSchoolByIdQuery { SchoolId = schoolId });
@@ -59,7 +59,7 @@ public class SchoolController : BaseApiController
     }
 
     [HttpGet("by-name/{schoolName}")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Schools)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Schools)]
     public async Task<IActionResult> GetSchoolByNameAsync(string schoolName)
     {
         var response = await Sender.Send(new GetSchoolByNameQuery { SchoolName = schoolName });
@@ -70,7 +70,7 @@ public class SchoolController : BaseApiController
     }
 
     [HttpGet("all")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Schools)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Schools)]
     public async Task<IActionResult> GetAllSchoolsAsync()
     {
         var response = await Sender.Send(new GetSchoolsQuery());

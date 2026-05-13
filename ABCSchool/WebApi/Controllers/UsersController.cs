@@ -13,7 +13,7 @@ namespace WebApi.Controllers;
 public class UsersController : BaseApiController
 {
     [HttpPost("register")]
-    [ShouldHavePermission(SchoolAction.Create, SchoolPermissions.Users)]
+    [ShouldHavePermission(SchoolAction.Create, SchoolFeature.Users)]
     public async Task<IActionResult> RegisterUserAsync([FromBody] CreateUserRequest createUser)
     {
         var response = await Sender.Send(new CreateUserCommand { CreateUser = createUser });
@@ -27,7 +27,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpPut("update")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.Users)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.Users)]
     public async Task<IActionResult> UpdateUserDetailsAsync([FromBody] UpdateUserRequest updateUser)
     {
         var response = await Sender.Send(new UpdateUserCommand { UpdateUser = updateUser });
@@ -41,7 +41,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpPut("update-status")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.Users)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.Users)]
     public async Task<IActionResult> ChangeUserStatusAsync([FromBody] ChangeUserStatusRequest changeUserStatus)
     {
         var response = await Sender.Send(new UpdateUserStatusCommand { ChangeUserStatus = changeUserStatus });
@@ -55,7 +55,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpPut("update-roles/{roleId}")]
-    [ShouldHavePermission(SchoolAction.Update, SchoolPermissions.UserRoles)]
+    [ShouldHavePermission(SchoolAction.Update, SchoolFeature.UserRoles)]
     public async Task<IActionResult> UpdateUserRolesAsync([FromBody] UserRolesRequest userRolesRequest, string roleId)
     {
         var response = await Sender.Send(new UpdateUserRolesCommand
@@ -73,7 +73,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpDelete("delete/{userId}")]
-    [ShouldHavePermission(SchoolAction.Delete, SchoolPermissions.Users)]
+    [ShouldHavePermission(SchoolAction.Delete, SchoolFeature.Users)]
     public async Task<IActionResult> DeleteUserAsync(string userId)
     {
         var response = await Sender.Send(new DeleteUserCommand { UserId = userId });
@@ -87,7 +87,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpGet("all")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Users)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Users)]
     public async Task<IActionResult> GetUsersAsync()
     {
         var response = await Sender.Send(new GetAllUsersQuery());
@@ -101,7 +101,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpGet("{userId}")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.Users)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.Users)]
     public async Task<IActionResult> GetUserByIdAsync(string userId)
     {
         var response = await Sender.Send(new GetUserByIdQuery { UserId = userId });
@@ -115,7 +115,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpGet("permissions/{userId}")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.RoleClaims)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.RoleClaims)]
     public async Task<IActionResult> GetUserPermissionsAsync(string userId)
     {
         var response = await Sender.Send(new GetUserPermissionsQuery { UserId = userId });
@@ -129,7 +129,7 @@ public class UsersController : BaseApiController
     }
 
     [HttpGet("user-roles/{userId}")]
-    [ShouldHavePermission(SchoolAction.Read, SchoolPermissions.UserRoles)]
+    [ShouldHavePermission(SchoolAction.Read, SchoolFeature.UserRoles)]
     public async Task<IActionResult> GetUserRolesAsync(string userId)
     {
         var response = await Sender.Send(new GetUserRolesQuery { UserId = userId });
