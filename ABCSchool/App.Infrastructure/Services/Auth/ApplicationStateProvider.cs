@@ -12,6 +12,7 @@ public class ApplicationStateProvider : AuthenticationStateProvider
 {
     private readonly ILocalStorageService _localStorageService;
     private readonly HttpClient _httpClient;
+    public ClaimsPrincipal AuthenticationStateUser { get; set; }
 
     public ApplicationStateProvider(ILocalStorageService localStorageService, HttpClient httpClient)
     {
@@ -31,7 +32,36 @@ public class ApplicationStateProvider : AuthenticationStateProvider
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", savedToken);
 
         var state = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(GetClaimsFromJwt(savedToken), "jwt")));
+        AuthenticationStateUser = state.User;
         return state;
+    }
+
+    public void MarkUserAuthenticated(string username)
+    {
+        var authenticatedUser = new ClaimsPrincipal(
+            new ClaimsIdentity(
+            [
+                new Claim(ClaimTypes.Email, username)
+            ], "apiauth"));
+
+        var authState = Task.FromResult(new AuthenticationState(authenticatedUser));
+
+        NotifyAuthenticationStateChanged(authState);
+    }
+
+    public void MarkUserAsLoggedOut()
+    {
+        var anonymousUser = new ClaimsPrincipal(new ClaimsIdentity());
+
+        var authState = Task.FromResult(new AuthenticationState(anonymousUser));
+
+        NotifyAuthenticationStateChanged(authState);
+    }
+
+    public async Task<ClaimsPrincipal> GetAuthenticationStateProviderUserAsync()
+    {
+        var state = await GetAuthenticationStateAsync();
+        return state.User;
     }
 
     private IEnumerable<Claim> GetClaimsFromJwt(string jwt)
@@ -77,7 +107,11 @@ public class ApplicationStateProvider : AuthenticationStateProvider
 
                 keyValuePairs.Remove(ClaimConstants.Permission);
             }
+
+            claims.AddRange(keyValuePairs.Select(kvp => new Claim(kvp.Key, kvp.Value.ToString() ?? string.Empty)));
         }
+
+        return claims;
     }
 
     private byte[] ParseBase64WithoutPadding(string base64Payoad)
