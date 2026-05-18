@@ -14,13 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ABCSharedLibrary\ABCSharedLibrary\ABCSharedLibrary.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ABCSharedLibrary">
-      <HintPath>..\..\ABCSharedLibrary\ABCSharedLibrary\bin\Debug\net10.0\ABCSharedLibrary.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
