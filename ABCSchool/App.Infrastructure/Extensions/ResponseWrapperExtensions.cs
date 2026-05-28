@@ -23,7 +23,7 @@ public static class ResponseWrapperExtensions
     {
         var responseAsString = await responseMessage.Content.ReadAsStringAsync();
 
-        var responseObject = JsonSerializer.Deserialize<ResponseWrapper<T>>(responseAsString, new JsonSerializerOptions
+        var responseObject = JsonSerializer.Deserialize<ResponseWrapper>(responseAsString, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true,
             ReferenceHandler = ReferenceHandler.Preserve
