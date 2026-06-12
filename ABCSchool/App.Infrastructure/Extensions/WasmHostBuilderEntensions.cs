@@ -1,4 +1,6 @@
 ﻿using App.Infrastructure.Services.Auth;
+using App.Infrastructure.Services.Identity;
+using App.Infrastructure.Services.Implementations.Identity;
 using Blazored.LocalStorage;
 using Infrastructure.Constants;
 using Microsoft.AspNetCore.Authorization;
@@ -31,6 +33,7 @@ public static class WasmHostBuilderEntensions
                         .AddScoped<ApplicationStateProvider>()
                         .AddScoped<AuthenticationStateProvider, ApplicationStateProvider>()
                         .AddTransient<AuthenticationHeaderHandler>()
+                        .AddScoped<ITokenService, TokenService>()
                         .AddScoped(sp => 
                             sp.GetRequiredService<IHttpClientFactory>()
                               .CreateClient(_apiClientName)
